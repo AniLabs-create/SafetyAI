@@ -1,0 +1,301 @@
+report_text,category,risk_label
+"An evacuation route pressure readings were slightly above the normal range at the start of the night shift, and the unit was shut down for a closer look.",Emergency,MEDIUM
+"Live electrical components on a stamping press were found exposed in the main production area, creating an immediate electrocution hazard until the area was delayed.",Machinery,HIGH
+"Moisture buildup was observed inside a stamping press in the shipping bay, raising concern about corrosion if left unaddressed.",Machinery,MEDIUM
+A worker was seen bypassing a lockout procedure briefly on a distillation column; the behavior was secured and addressed with retraining.,Process Safety,MEDIUM
+"A stamping press pressure readings were slightly above the normal range during a spot check, and the unit was ignored for a closer look.",Machinery,MEDIUM
+A bearing on the main motor was cleaned and returned to service after a light residue was noticed while responding to a reported noise.,Maintenance,LOW
+"A significant leak from an office workstation in the chemical storage room released hazardous material before it could be fully secured, posing a serious exposure risk.",Workplace,HIGH
+"The emergency exit in the outdoor storage yard was found completely blocked during a simulated evacuation, delaying evacuation by several minutes.",Workplace,HIGH
+A smoke detector showed slight cosmetic wear near the loading dock. The issue was documented but does not affect normal operation.,Fire,LOW
+"Live electrical components on a control cabinet were found exposed in the chemical storage room, creating an immediate electrocution hazard until the area was isolated.",Electrical,HIGH
+"A minor tripping hazard, a loose floor tile, was isolated and corrected the same afternoon along the east corridor.",Slips and Falls,LOW
+"A packaging machine showed a dangerous pressure spike during a routine inspection, and the system was isolated to prevent a potential rupture.",Equipment,HIGH
+A fire alarm panel was cleaned and returned to service after a light residue was noticed during a routine inspection.,Fire,LOW
+"Dangerous machinery along the east corridor was found operating without required guarding, exposing workers to a serious risk of amputation.",Maintenance,HIGH
+"A routine check during a scheduled maintenance check confirmed that a forklift is functioning within normal parameters, with only a small cosmetic flaw noted.",Machinery,LOW
+A fire hazard was identified near a tiled entrance area in the north warehouse after flammable material was found stored improperly close to an ignition source.,Slips and Falls,HIGH
+"An employee noted that a filtration unit made a brief unusual sound at the start of the night shift, but on inspection no defect was found.",Maintenance,LOW
+"A CNC milling machine showed a dangerous pressure spike during a spot check, and the system was shut down to prevent a potential rupture.",Machinery,HIGH
+"A chemical storage tank suffered a severe mechanical failure while reviewing equipment logs, sending debris across the surrounding area and requiring an emergency shutdown.",Chemical,HIGH
+"A fire extinguisher was found to be slightly loose in the packaging line, and was tightened immediately with no disruption to work.",Fire,LOW
+A control cabinet was found operating at elevated temperature in the north warehouse during a weekly audit. The unit was ignored pending further evaluation.,Electrical,MEDIUM
+"Dangerous machinery in the chemical storage room was found operating without required guarding, exposing workers to a serious risk of amputation.",Maintenance,HIGH
+"While performing a safety walk-through, an air compressor was found slightly out of alignment. The condition was corrected on the spot and no further action was needed.",Equipment,LOW
+"The ventilation system in the north warehouse was found operating below expected capacity, and the issue was repaired for follow-up.",Machinery,MEDIUM
+"Critical maintenance on a pressure relief valve has been delayed repeatedly despite escalating warning signs, and it was finally escalated only after a near-miss.",Process Safety,HIGH
+"A support beam pressure readings were slightly above the normal range during a routine inspection, and the unit was monitored for a closer look.",Structural,MEDIUM
+"A chemical container ruptured in the main production area, spilling hazardous contents into a drainage area before containment teams repaired the site.",Process Safety,HIGH
+A small amount of dust accumulation was found near a support beam next to the employee break area. Housekeeping staff cleaned the area shortly after it was inspected.,Structural,LOW
+"A worker reported mild discomfort after an extended shift working at a storage shelf in the main production area, prompting a review of the workstation setup.",Housekeeping,MEDIUM
+"A packing table required a routine cleaning during a scheduled maintenance check after light dust buildup was noted, with no operational concern.",Ergonomics,LOW
+A cooling fan passed its scheduled inspection during a weekly audit with only a trivial note about surface wear.,Maintenance,LOW
+A lifting hoist showed slight cosmetic wear in the outdoor storage yard. The issue was documented but does not affect normal operation.,Equipment,LOW
+A hard hat was found with a damaged but still functional guard near the emergency exit. It remains operable while a replacement part is ordered.,PPE,MEDIUM
+"Critical maintenance on a junction box has been delayed repeatedly despite escalating warning signs, and it was finally escalated only after a near-miss.",Electrical,HIGH
+A worker narrowly avoided serious injury when a repetitive-motion workstation activated unexpectedly in the chemical storage room due to a bypassed interlock.,Ergonomics,HIGH
+"A minor tripping hazard, a loose floor tile, was reported and corrected the same afternoon in the outdoor storage yard.",Housekeeping,LOW
+"A chemical container ruptured in the outdoor storage yard, spilling hazardous contents into a drainage area before containment teams monitored the site.",Environmental,HIGH
+"A routine check while reviewing equipment logs confirmed that a high-visibility vest is functioning within normal parameters, with only a small cosmetic flaw noted.",PPE,LOW
+"A load being lifted by an air compressor shifted unexpectedly near the loading dock, nearly striking two workers before the operation was ignored.",Equipment,HIGH
+A conveyor belt showed visible wear that reduces efficiency but does not present immediate danger; the issue was secured and a repair has been scheduled.,Equipment,MEDIUM
+"A minor spill of water, unrelated to any hazardous material, was quickly wiped up near an emergency exit in the main production area.",Emergency,LOW
+A filtration unit showed visible wear that reduces efficiency but does not present immediate danger; the issue was repaired and a repair has been scheduled.,Maintenance,MEDIUM
+A supervisor noted that scheduled maintenance on a loading dock next to the employee break area has been monitored beyond the recommended window.,Workplace,MEDIUM
+"A gas leak from a flammable storage cabinet triggered the facility's alarm system close to the maintenance workshop, and emergency responders were called in as the area was isolated.",Fire,HIGH
+"A chemical container ruptured along the east corridor, spilling hazardous contents into a drainage area before containment teams escalated the site.",Environmental,HIGH
+"A chemical container ruptured on the second floor, spilling hazardous contents into a drainage area before containment teams delayed the site.",Environmental,HIGH
+"Maintenance on a pipeline carrying reagent has been reported twice this month, raising concern about its reliability.",Chemical,MEDIUM
+An incomplete set of PPE was found stored close to the maintenance workshop; missing items were flagged and additional inspection was requested.,Housekeeping,MEDIUM
+"A loading dock was found to be slightly loose on the second floor, and was tightened immediately with no disruption to work.",Workplace,LOW
+"A gearbox required a routine cleaning while performing a safety walk-through after light dust buildup was noted, with no operational concern.",Maintenance,LOW
+"A routine check after a shift change confirmed that a gearbox is functioning within normal parameters, with only a small cosmetic flaw noted.",Maintenance,LOW
+An exhaust vent passed its scheduled inspection at the start of the night shift with only a trivial note about surface wear.,Environmental,LOW
+"Dangerous machinery in the north warehouse was found operating without required guarding, exposing workers to a serious risk of amputation.",Machinery,HIGH
+"Severe corrosion was found on a cooling fan near the loading dock, compromising structural integrity and posing a risk of sudden failure.",Maintenance,HIGH
+"A process control loop showed a dangerous pressure spike while reviewing equipment logs, and the system was shut down to prevent a potential rupture.",Process Safety,HIGH
+A label on a manual lifting station in the chemical storage room had become faded and was replaced during routine upkeep.,Ergonomics,LOW
+"Dangerous machinery in the shipping bay was found operating without required guarding, exposing workers to a serious risk of amputation.",Machinery,HIGH
+"Multiple prior warnings about a distribution board were ignored, resulting in a serious failure that required the line to be repaired immediately.",Electrical,HIGH
+An employee working in the north warehouse was observed without a required piece of PPE. The worker was reminded and the incident was monitored.,Slips and Falls,MEDIUM
+A short delay in restocking PPE supplies close to the maintenance workshop was noted and resolved before the next shift began.,PPE,LOW
+A storage rack showed visible wear that reduces efficiency but does not present immediate danger; the issue was inspected and a repair has been scheduled.,Structural,MEDIUM
+"A slippery patch was identified near the emergency exit, likely caused by a minor leak from a warehouse floor, and was marked with a warning sign.",Slips and Falls,MEDIUM
+"Repeated minor spills have occurred near a rotating drum mixer in the quality control lab, and the area has been delayed for a deeper review.",Machinery,MEDIUM
+"A worker reported mild discomfort after an extended shift working at a process control loop on the second floor, prompting a review of the workstation setup.",Process Safety,MEDIUM
+An employee working in the north warehouse was observed without a required piece of PPE. The worker was reminded and the incident was reported.,Machinery,MEDIUM
+"Live electrical components on a junction box were found exposed on the second floor, creating an immediate electrocution hazard until the area was repaired.",Electrical,HIGH
+A recurring minor hazard involving loose cabling near a junction box was repaired after being noticed for the third time this month.,Electrical,MEDIUM
+"The ventilation system in the quality control lab was found operating below expected capacity, and the issue was isolated for follow-up.",PPE,MEDIUM
+A small amount of dust accumulation was found near a distillation column along the east corridor. Housekeeping staff cleaned the area shortly after it was inspected.,Process Safety,LOW
+"The ventilation system along the east corridor was found operating below expected capacity, and the issue was shut down for follow-up.",Ergonomics,MEDIUM
+A minor scuff mark was noticed on a hard hat on the mezzanine level during a weekly audit. No functional impact was observed and the item was noted for future reference.,PPE,LOW
+"A significant leak from a bearing on the main motor along the east corridor released hazardous material before it could be fully inspected, posing a serious exposure risk.",Maintenance,HIGH
+"Severe corrosion was found on a packing table along the east corridor, compromising structural integrity and posing a risk of sudden failure.",Ergonomics,HIGH
+A worker was seen bypassing a lockout procedure briefly on a loading dock; the behavior was ignored and addressed with retraining.,Workplace,MEDIUM
+A fire hazard was identified near a high-visibility vest in the packaging line after flammable material was found stored improperly close to an ignition source.,PPE,HIGH
+Uncontrolled release of chemical vapor from a wastewater discharge line forced an immediate evacuation of the surrounding work area.,Environmental,HIGH
+"A slippery patch was identified on the second floor, likely caused by a minor leak from a wastewater discharge line, and was marked with a warning sign.",Environmental,MEDIUM
+A fire hazard was identified near a bearing on the main motor in the packaging line after flammable material was found stored improperly close to an ignition source.,Maintenance,HIGH
+A mezzanine platform was found with a damaged but still functional guard close to the maintenance workshop. It remains operable while a replacement part is ordered.,Structural,MEDIUM
+"Critical maintenance on a stamping press has been delayed repeatedly despite escalating warning signs, and it was finally secured only after a near-miss.",Machinery,HIGH
+"Moisture buildup was observed inside a stamping press in the north warehouse, raising concern about corrosion if left unaddressed.",Machinery,MEDIUM
+"Critical maintenance on a chemical storage tank has been delayed repeatedly despite escalating warning signs, and it was finally inspected only after a near-miss.",Chemical,HIGH
+A supervisor noted that scheduled maintenance on a mezzanine platform next to the employee break area has been escalated beyond the recommended window.,Structural,MEDIUM
+"An air scrubber required a routine cleaning after a shift change after light dust buildup was noted, with no operational concern.",Environmental,LOW
+"While reviewing equipment logs, an air scrubber was found slightly out of alignment. The condition was corrected on the spot and no further action was needed.",Environmental,LOW
+"A warehouse floor required a routine cleaning during a routine inspection after light dust buildup was noted, with no operational concern.",Slips and Falls,LOW
+An evacuation route showed slight cosmetic wear in the main production area. The issue was documented but does not affect normal operation.,Emergency,LOW
+An incomplete set of PPE was found stored on the second floor; missing items were flagged and additional inspection was requested.,Housekeeping,MEDIUM
+Employees ignored a slightly bent guard rail near the emergency exit; it was already scheduled for cosmetic repair.,Electrical,LOW
+"The ventilation system in the outdoor storage yard was found operating below expected capacity, and the issue was monitored for follow-up.",Process Safety,MEDIUM
+Staff observed that a walkway sign in the quality control lab had fallen over; it was picked up and reset without incident.,Workplace,LOW
+"An electrical fault caused visible sparking from a hydraulic hose on the mezzanine level, prompting an emergency shutdown of the entire section.",Maintenance,HIGH
+"Live electrical components on a band saw were found exposed near the loading dock, creating an immediate electrocution hazard until the area was monitored.",Machinery,HIGH
+"Maintenance on a seating arrangement has been isolated twice this month, raising concern about its reliability.",Ergonomics,MEDIUM
+A worker narrowly avoided serious injury when a conveyor belt activated unexpectedly along the east corridor due to a bypassed interlock.,Equipment,HIGH
+"Repeated minor spills have occurred near a process control loop in the quality control lab, and the area has been secured for a deeper review.",Process Safety,MEDIUM
+"A worker reported mild discomfort after an extended shift working at a packing table along the east corridor, prompting a review of the workstation setup.",Ergonomics,MEDIUM
+"Repeated minor spills have occurred near a pressure relief valve next to the employee break area, and the area has been escalated for a deeper review.",Process Safety,MEDIUM
+A fire hazard was identified near a loading dock canopy in the quality control lab after flammable material was found stored improperly close to an ignition source.,Structural,HIGH
+A fire hazard was identified near a conveyor belt along the east corridor after flammable material was found stored improperly close to an ignition source.,Equipment,HIGH
+A small amount of dust accumulation was found near a CNC milling machine in the chemical storage room. Housekeeping staff cleaned the area shortly after it was repaired.,Machinery,LOW
+"A gas leak from a chemical storage tank triggered the facility's alarm system close to the maintenance workshop, and emergency responders were called in as the area was monitored.",Chemical,HIGH
+An extra box of supplies was temporarily stored close to the maintenance workshop; it was moved to proper storage the same day.,Housekeeping,LOW
+"A minor electrical concern was noted near a filtration unit near the loading dock, including a warm junction that was secured for inspection.",Maintenance,MEDIUM
+An employee working in the outdoor storage yard was observed without a required piece of PPE. The worker was reminded and the incident was escalated.,Machinery,MEDIUM
+A light bulb flickered briefly near a stairwell near the emergency exit and was replaced during the next maintenance round.,Slips and Falls,LOW
+"A load being lifted by an air compressor shifted unexpectedly in the chemical storage room, nearly striking two workers before the operation was delayed.",Equipment,HIGH
+A small puddle of condensation was observed near a pressure relief valve in the quality control lab and evaporated before any action was required.,Process Safety,LOW
+A minor scuff mark was noticed on a distillation column along the east corridor while responding to a reported noise. No functional impact was observed and the item was noted for future reference.,Process Safety,LOW
+An assembly workbench was found operating at elevated temperature near the loading dock at the start of the night shift. The unit was monitored pending further evaluation.,Ergonomics,MEDIUM
+"A minor tripping hazard, a loose floor tile, was repaired and corrected the same afternoon next to the employee break area.",Slips and Falls,LOW
+An extra box of supplies was temporarily stored near the loading dock; it was moved to proper storage the same day.,Housekeeping,LOW
+"While performing a safety walk-through, a storage shelf was found slightly out of alignment. The condition was corrected on the spot and no further action was needed.",Housekeeping,LOW
+Employees shut down a slightly bent guard rail in the chemical storage room; it was already scheduled for cosmetic repair.,Workplace,LOW
+Staff observed that a walkway sign in the shipping bay had fallen over; it was picked up and reset without incident.,Workplace,LOW
+"Severe corrosion was found on a process control loop in the packaging line, compromising structural integrity and posing a risk of sudden failure.",Process Safety,HIGH
+A repetitive-motion workstation passed its scheduled inspection during the morning shift with only a trivial note about surface wear.,Ergonomics,LOW
+"A chemical container ruptured on the mezzanine level, spilling hazardous contents into a drainage area before containment teams reported the site.",Chemical,HIGH
+"Severe corrosion was found on a fire alarm panel close to the maintenance workshop, compromising structural integrity and posing a risk of sudden failure.",Fire,HIGH
+"Toxic fumes were detected in the chemical storage room after a flammable storage cabinet malfunctioned, requiring respiratory protection and immediate evacuation.",Fire,HIGH
+"A minor tripping hazard, a loose floor tile, was escalated and corrected the same afternoon in the main production area.",Housekeeping,LOW
+"Moisture buildup was observed inside a break area in the main production area, raising concern about corrosion if left unaddressed.",Housekeeping,MEDIUM
+"A slippery patch was identified in the main production area, likely caused by a minor leak from a chemical storage tank, and was marked with a warning sign.",Chemical,MEDIUM
+A small amount of dust accumulation was found near a storage shelf in the chemical storage room. Housekeeping staff cleaned the area shortly after it was shut down.,Housekeeping,LOW
+Uncontrolled release of chemical vapor from a pipeline carrying reagent forced an immediate evacuation of the surrounding work area.,Chemical,HIGH
+A recurring minor hazard involving loose cabling near a loading dock canopy was monitored after being noticed for the third time this month.,Structural,MEDIUM
+"The ventilation system in the chemical storage room was found operating below expected capacity, and the issue was delayed for follow-up.",Environmental,MEDIUM
+"A minor tripping hazard, a loose floor tile, was reported and corrected the same afternoon in the north warehouse.",Slips and Falls,LOW
+A manual lifting station showed slight cosmetic wear in the chemical storage room. The issue was documented but does not affect normal operation.,Ergonomics,LOW
+An electrical panel exhibited an unusual odor during a scheduled maintenance check; operations continued at reduced capacity while the cause was monitored.,Electrical,MEDIUM
+"Maintenance on an air compressor has been delayed twice this month, raising concern about its reliability.",Equipment,MEDIUM
+A label on a hydraulic hose in the main production area had become faded and was replaced during routine upkeep.,Maintenance,LOW
+"An electrical fault caused visible sparking from a bearing on the main motor on the mezzanine level, prompting an emergency shutdown of the entire section.",Maintenance,HIGH
+"Toxic fumes were detected on the mezzanine level after a fire extinguisher malfunctioned, requiring respiratory protection and immediate evacuation.",Fire,HIGH
+A short delay in restocking PPE supplies in the shipping bay was noted and resolved before the next shift began.,Housekeeping,LOW
+"A steam boiler showed a dangerous pressure spike during a routine inspection, and the system was escalated to prevent a potential rupture.",Process Safety,HIGH
+"Maintenance on a hydraulic hose has been secured twice this month, raising concern about its reliability.",Maintenance,MEDIUM
+Staff observed that a walkway sign in the outdoor storage yard had fallen over; it was picked up and reset without incident.,Slips and Falls,LOW
+A walkway passed its scheduled inspection after a shift change with only a trivial note about surface wear.,Housekeeping,LOW
+A label on a tiled entrance area in the main production area had become faded and was replaced during routine upkeep.,Slips and Falls,LOW
+"An employee noted that an evacuation route made a brief unusual sound during a scheduled maintenance check, but on inspection no defect was found.",Emergency,LOW
+"Repeated minor spills have occurred near a wastewater discharge line in the quality control lab, and the area has been secured for a deeper review.",Environmental,MEDIUM
+"An electrical fault caused visible sparking from a junction box on the second floor, prompting an emergency shutdown of the entire section.",Electrical,HIGH
+"Critical safety guards on a conveyor belt were missing during a spot check, allowing direct access to moving parts during operation.",Equipment,HIGH
+"Toxic fumes were detected near the loading dock after a steam boiler malfunctioned, requiring respiratory protection and immediate evacuation.",Process Safety,HIGH
+"A structural crack was discovered in a process control loop on the mezzanine level, raising concern of imminent collapse under normal load.",Process Safety,HIGH
+"Moisture buildup was observed inside a cooling fan in the shipping bay, raising concern about corrosion if left unaddressed.",Maintenance,MEDIUM
+A worker was seen bypassing a lockout procedure briefly on a mezzanine platform; the behavior was ignored and addressed with retraining.,Structural,MEDIUM
+"An employee noted that a pressure relief valve made a brief unusual sound while reviewing equipment logs, but on inspection no defect was found.",Process Safety,LOW
+"Maintenance on a pressure relief valve has been monitored twice this month, raising concern about its reliability.",Process Safety,MEDIUM
+"A significant leak from a high-visibility vest in the quality control lab released hazardous material before it could be fully shut down, posing a serious exposure risk.",PPE,HIGH
+"An employee noted that a band saw made a brief unusual sound during the morning shift, but on inspection no defect was found.",Machinery,LOW
+"Critical safety guards on a conveyor belt were missing after a shift change, allowing direct access to moving parts during operation.",Equipment,HIGH
+"A storage rack pressure readings were slightly above the normal range while responding to a reported noise, and the unit was shut down for a closer look.",Structural,MEDIUM
+"The emergency exit on the second floor was found completely blocked during a simulated evacuation, delaying evacuation by several minutes.",Fire,HIGH
+"A seating arrangement pressure readings were slightly above the normal range after a shift change, and the unit was inspected for a closer look.",Ergonomics,MEDIUM
+"During a routine inspection, a lifting hoist was found slightly out of alignment. The condition was corrected on the spot and no further action was needed.",Equipment,LOW
+"Moisture buildup was observed inside a hard hat in the shipping bay, raising concern about corrosion if left unaddressed.",PPE,MEDIUM
+"The ventilation system near the emergency exit was found operating below expected capacity, and the issue was inspected for follow-up.",Electrical,MEDIUM
+"Maintenance on a break room has been repaired twice this month, raising concern about its reliability.",Workplace,MEDIUM
+"A roof truss was found to be slightly loose on the mezzanine level, and was tightened immediately with no disruption to work.",Structural,LOW
+A pressure relief valve showed slight cosmetic wear in the main production area. The issue was documented but does not affect normal operation.,Process Safety,LOW
+"A mezzanine platform was found to be slightly loose along the east corridor, and was tightened immediately with no disruption to work.",Structural,LOW
+"A slippery patch was identified in the outdoor storage yard, likely caused by a minor leak from an emergency exit, and was marked with a warning sign.",Emergency,MEDIUM
+"An employee noted that a hard hat made a brief unusual sound during a scheduled maintenance check, but on inspection no defect was found.",PPE,LOW
+A recurring minor hazard involving loose cabling near a warehouse aisle was isolated after being noticed for the third time this month.,Workplace,MEDIUM
+"A bearing on the main motor required temporary bypass of a secondary safety feature in the outdoor storage yard, which was isolated and scheduled for prompt correction.",Maintenance,MEDIUM
+A manual lifting station displayed abnormal vibration during the morning shift. The equipment remains in use but has been flagged for closer monitoring.,Ergonomics,MEDIUM
+"Severe corrosion was found on a lifting hoist on the second floor, compromising structural integrity and posing a risk of sudden failure.",Equipment,HIGH
+"A hard hat was found to be slightly loose on the second floor, and was tightened immediately with no disruption to work.",PPE,LOW
+"An operator continued working despite a known brake failure on a filtration unit, an issue that had been ignored but not repaired.",Maintenance,HIGH
+A worker was seen bypassing a lockout procedure briefly on a set of wiring cables; the behavior was reported and addressed with retraining.,Electrical,MEDIUM
+A recurring minor hazard involving loose cabling near an evacuation route was reported after being noticed for the third time this month.,Emergency,MEDIUM
+"A routine check during a scheduled maintenance check confirmed that a wastewater discharge line is functioning within normal parameters, with only a small cosmetic flaw noted.",Environmental,LOW
+A minor scuff mark was noticed on a set of wiring cables on the second floor after a shift change. No functional impact was observed and the item was noted for future reference.,Electrical,LOW
+"Dangerous machinery near the boiler room was found operating without required guarding, exposing workers to a serious risk of amputation.",Maintenance,HIGH
+"Severe corrosion was found on an exhaust vent on the mezzanine level, compromising structural integrity and posing a risk of sudden failure.",Environmental,HIGH
+"A loading dock was found to be slightly loose in the north warehouse, and was tightened immediately with no disruption to work.",Workplace,LOW
+"Critical maintenance on a container of cleaning acid has been delayed repeatedly despite escalating warning signs, and it was finally shut down only after a near-miss.",Chemical,HIGH
+"Repeated minor spills have occurred near a walkway near the loading bay in the north warehouse, and the area has been delayed for a deeper review.",Slips and Falls,MEDIUM
+"A significant leak from a set of safety goggles in the packaging line released hazardous material before it could be fully secured, posing a serious exposure risk.",PPE,HIGH
+A supervisor noted that scheduled maintenance on a tool cabinet in the main production area has been repaired beyond the recommended window.,Housekeeping,MEDIUM
+"During a weekly audit, an emergency shutdown switch was found slightly out of alignment. The condition was corrected on the spot and no further action was needed.",Emergency,LOW
+A walkway near the loading bay displayed abnormal vibration after a shift change. The equipment remains in use but has been flagged for closer monitoring.,Slips and Falls,MEDIUM
+A worker was seen bypassing a lockout procedure briefly on a respirator mask; the behavior was escalated and addressed with retraining.,PPE,MEDIUM
+"Critical maintenance on an electrical panel has been delayed repeatedly despite escalating warning signs, and it was finally inspected only after a near-miss.",Electrical,HIGH
+"Critical maintenance on a supply closet has been delayed repeatedly despite escalating warning signs, and it was finally inspected only after a near-miss.",Housekeeping,HIGH
+A light bulb flickered briefly near a warehouse floor along the east corridor and was replaced during the next maintenance round.,Slips and Falls,LOW
+"Critical maintenance on a process control loop has been delayed repeatedly despite escalating warning signs, and it was finally escalated only after a near-miss.",Process Safety,HIGH
+An incomplete set of PPE was found stored in the packaging line; missing items were flagged and additional inspection was requested.,Housekeeping,MEDIUM
+"A minor tripping hazard, a loose floor tile, was monitored and corrected the same afternoon in the north warehouse.",Slips and Falls,LOW
+"A minor tripping hazard, a loose floor tile, was isolated and corrected the same afternoon close to the maintenance workshop.",Slips and Falls,LOW
+"The ventilation system close to the maintenance workshop was found operating below expected capacity, and the issue was escalated for follow-up.",Electrical,MEDIUM
+An employee working in the packaging line was observed without a required piece of PPE. The worker was reminded and the incident was monitored.,Fire,MEDIUM
+"A minor paint chip was noted on a gearbox near the loading dock, considered a cosmetic issue with no safety implication.",Maintenance,LOW
+"A fire assembly point required temporary bypass of a secondary safety feature near the loading dock, which was isolated and scheduled for prompt correction.",Emergency,MEDIUM
+"An employee noted that an assembly workbench made a brief unusual sound after a shift change, but on inspection no defect was found.",Ergonomics,LOW
+"Critical maintenance on a stairwell has been delayed repeatedly despite escalating warning signs, and it was finally shut down only after a near-miss.",Slips and Falls,HIGH
+"A worker reported mild discomfort after an extended shift working at a storage rack on the mezzanine level, prompting a review of the workstation setup.",Structural,MEDIUM
+"An exhaust vent suffered a severe mechanical failure during a scheduled maintenance check, sending debris across the surrounding area and requiring an emergency shutdown.",Environmental,HIGH
+A minor scuff mark was noticed on a gearbox next to the employee break area during a weekly audit. No functional impact was observed and the item was noted for future reference.,Maintenance,LOW
+A walkway near the loading bay exhibited an unusual odor during the morning shift; operations continued at reduced capacity while the cause was inspected.,Slips and Falls,MEDIUM
+"During a weekly audit, a walkway near the loading bay was found slightly out of alignment. The condition was corrected on the spot and no further action was needed.",Slips and Falls,LOW
+"During a weekly audit, a set of wiring cables was found slightly out of alignment. The condition was corrected on the spot and no further action was needed.",Electrical,LOW
+A runoff collection pit was found operating at elevated temperature on the second floor after a shift change. The unit was delayed pending further evaluation.,Environmental,MEDIUM
+"A routine check at the start of the night shift confirmed that a seating arrangement is functioning within normal parameters, with only a small cosmetic flaw noted.",Ergonomics,LOW
+"A minor spill of water, unrelated to any hazardous material, was quickly wiped up near a smoke detector in the quality control lab.",Fire,LOW
+A recurring minor hazard involving loose cabling near an emergency shutdown switch was isolated after being noticed for the third time this month.,Emergency,MEDIUM
+"A significant leak from a filtration unit in the main production area released hazardous material before it could be fully ignored, posing a serious exposure risk.",Maintenance,HIGH
+"A worker reported mild discomfort after an extended shift working at a sprinkler valve on the second floor, prompting a review of the workstation setup.",Fire,MEDIUM
+"Critical maintenance on a walkway has been delayed repeatedly despite escalating warning signs, and it was finally repaired only after a near-miss.",Housekeeping,HIGH
+"A stairwell required temporary bypass of a secondary safety feature in the outdoor storage yard, which was inspected and scheduled for prompt correction.",Slips and Falls,MEDIUM
+"A CNC milling machine showed a dangerous pressure spike while responding to a reported noise, and the system was escalated to prevent a potential rupture.",Machinery,HIGH
+Uncontrolled release of chemical vapor from a container of cleaning acid forced an immediate evacuation of the surrounding work area.,Chemical,HIGH
+An extra box of supplies was temporarily stored on the second floor; it was moved to proper storage the same day.,Workplace,LOW
+"Severe corrosion was found on a warehouse floor near the emergency exit, compromising structural integrity and posing a risk of sudden failure.",Slips and Falls,HIGH
+"A structural crack was discovered in an air compressor on the mezzanine level, raising concern of imminent collapse under normal load.",Equipment,HIGH
+"An emergency exit required a routine cleaning during a spot check after light dust buildup was noted, with no operational concern.",Emergency,LOW
+"Repeated minor spills have occurred near a mezzanine platform in the outdoor storage yard, and the area has been monitored for a deeper review.",Structural,MEDIUM
+"A routine check while performing a safety walk-through confirmed that a hydraulic press is functioning within normal parameters, with only a small cosmetic flaw noted.",Equipment,LOW
+A light bulb flickered briefly near a conveyor belt in the shipping bay and was replaced during the next maintenance round.,Equipment,LOW
+A fire extinguisher was found with a damaged but still functional guard in the shipping bay. It remains operable while a replacement part is ordered.,Fire,MEDIUM
+"A minor electrical concern was noted near a distillation column close to the maintenance workshop, including a warm junction that was inspected for inspection.",Process Safety,MEDIUM
+An incomplete set of PPE was found stored in the quality control lab; missing items were flagged and additional inspection was requested.,PPE,MEDIUM
+"Toxic fumes were detected in the north warehouse after a pressure relief valve malfunctioned, requiring respiratory protection and immediate evacuation.",Process Safety,HIGH
+"A minor paint chip was noted on an electrical panel along the east corridor, considered a cosmetic issue with no safety implication.",Electrical,LOW
+"A structural crack was discovered in a stamping press near the loading dock, raising concern of imminent collapse under normal load.",Machinery,HIGH
+"A load being lifted by a band saw shifted unexpectedly next to the employee break area, nearly striking two workers before the operation was secured.",Machinery,HIGH
+"Live electrical components on an air compressor were found exposed in the packaging line, creating an immediate electrocution hazard until the area was ignored.",Equipment,HIGH
+"Critical maintenance on a reactor vessel has been delayed repeatedly despite escalating warning signs, and it was finally inspected only after a near-miss.",Process Safety,HIGH
+A worker was seen bypassing a lockout procedure briefly on a band saw; the behavior was inspected and addressed with retraining.,Machinery,MEDIUM
+"A runoff collection pit showed a hairline crack in a non-critical component in the main production area, and use has been restricted until it is ignored.",Environmental,MEDIUM
+A supervisor noted that scheduled maintenance on a filtration unit near the emergency exit has been secured beyond the recommended window.,Maintenance,MEDIUM
+"Critical safety guards on a pipeline carrying reagent were missing while performing a safety walk-through, allowing direct access to moving parts during operation.",Chemical,HIGH
+A chemical mixing vessel was found operating at elevated temperature in the main production area while performing a safety walk-through. The unit was shut down pending further evaluation.,Chemical,MEDIUM
+A small amount of dust accumulation was found near a packaging machine in the quality control lab. Housekeeping staff cleaned the area shortly after it was isolated.,Equipment,LOW
+A fire hazard was identified near a forklift along the east corridor after flammable material was found stored improperly close to an ignition source.,Machinery,HIGH
+"A slippery patch was identified on the second floor, likely caused by a minor leak from a smoke detector, and was marked with a warning sign.",Fire,MEDIUM
+"A worker reported mild discomfort after an extended shift working at an exhaust vent near the loading dock, prompting a review of the workstation setup.",Environmental,MEDIUM
+"The emergency exit near the loading dock was found completely blocked during a simulated evacuation, delaying evacuation by several minutes.",Emergency,HIGH
+A short delay in restocking PPE supplies in the quality control lab was noted and resolved before the next shift began.,Housekeeping,LOW
+"A chemical container ruptured close to the maintenance workshop, spilling hazardous contents into a drainage area before containment teams delayed the site.",Process Safety,HIGH
+"An employee noted that a bearing on the main motor made a brief unusual sound during a scheduled maintenance check, but on inspection no defect was found.",Maintenance,LOW
+"Toxic fumes were detected near the loading dock after a chemical mixing vessel malfunctioned, requiring respiratory protection and immediate evacuation.",Chemical,HIGH
+"A break room suffered a severe mechanical failure while reviewing equipment logs, sending debris across the surrounding area and requiring an emergency shutdown.",Workplace,HIGH
+"A minor spill of water, unrelated to any hazardous material, was quickly wiped up near a loading dock canopy in the packaging line.",Structural,LOW
+"An electrical fault caused visible sparking from a control cabinet next to the employee break area, prompting an emergency shutdown of the entire section.",Electrical,HIGH
+An evacuation route exhibited an unusual odor while performing a safety walk-through; operations continued at reduced capacity while the cause was reported.,Emergency,MEDIUM
+"Multiple prior warnings about an office workstation were ignored, resulting in a serious failure that required the line to be ignored immediately.",Workplace,HIGH
+"A fire extinguisher was found to be slightly loose in the quality control lab, and was tightened immediately with no disruption to work.",Fire,LOW
+A fire hazard was identified near a repetitive-motion workstation close to the maintenance workshop after flammable material was found stored improperly close to an ignition source.,Ergonomics,HIGH
+Staff observed that a walkway sign along the east corridor had fallen over; it was picked up and reset without incident.,Slips and Falls,LOW
+"A minor tripping hazard, a loose floor tile, was reported and corrected the same afternoon in the chemical storage room.",Slips and Falls,LOW
+A small puddle of condensation was observed near a hydraulic press near the emergency exit and evaporated before any action was required.,Equipment,LOW
+"A fire alarm panel was found to be slightly loose near the boiler room, and was tightened immediately with no disruption to work.",Fire,LOW
+"Moisture buildup was observed inside a rotating drum mixer in the quality control lab, raising concern about corrosion if left unaddressed.",Machinery,MEDIUM
+"Toxic fumes were detected in the packaging line after a reactor vessel malfunctioned, requiring respiratory protection and immediate evacuation.",Process Safety,HIGH
+A supervisor noted that scheduled maintenance on a repetitive-motion workstation in the outdoor storage yard has been reported beyond the recommended window.,Ergonomics,MEDIUM
+"A routine check during the morning shift confirmed that a chemical storage tank is functioning within normal parameters, with only a small cosmetic flaw noted.",Chemical,LOW
+"Severe corrosion was found on a distillation column in the packaging line, compromising structural integrity and posing a risk of sudden failure.",Process Safety,HIGH
+"The ventilation system in the main production area was found operating below expected capacity, and the issue was isolated for follow-up.",PPE,MEDIUM
+"A lifting hoist showed a dangerous pressure spike while performing a safety walk-through, and the system was shut down to prevent a potential rupture.",Equipment,HIGH
+Employees escalated a slightly bent guard rail near the emergency exit; it was already scheduled for cosmetic repair.,Environmental,LOW
+"A slippery patch was identified near the loading dock, likely caused by a minor leak from a loading dock canopy, and was marked with a warning sign.",Structural,MEDIUM
+"During a scheduled maintenance check, a break area was found slightly out of alignment. The condition was corrected on the spot and no further action was needed.",Housekeeping,LOW
+"A chemical container ruptured in the packaging line, spilling hazardous contents into a drainage area before containment teams ignored the site.",Process Safety,HIGH
+An employee working in the shipping bay was observed without a required piece of PPE. The worker was reminded and the incident was escalated.,Slips and Falls,MEDIUM
+A bearing on the main motor showed visible wear that reduces efficiency but does not present immediate danger; the issue was repaired and a repair has been scheduled.,Maintenance,MEDIUM
+A runoff collection pit showed visible wear that reduces efficiency but does not present immediate danger; the issue was isolated and a repair has been scheduled.,Environmental,MEDIUM
+"An employee noted that a tiled entrance area made a brief unusual sound during a weekly audit, but on inspection no defect was found.",Slips and Falls,LOW
+"Repeated minor spills have occurred near a loading ramp in the north warehouse, and the area has been ignored for a deeper review.",Slips and Falls,MEDIUM
+An incomplete set of PPE was found stored near the loading dock; missing items were flagged and additional inspection was requested.,Housekeeping,MEDIUM
+"A gas leak from a flammable storage cabinet triggered the facility's alarm system in the quality control lab, and emergency responders were called in as the area was monitored.",Fire,HIGH
+"The emergency exit on the mezzanine level was found completely blocked during a simulated evacuation, delaying evacuation by several minutes.",Emergency,HIGH
+"A significant leak from a loading ramp in the main production area released hazardous material before it could be fully ignored, posing a serious exposure risk.",Slips and Falls,HIGH
+"Critical maintenance on a walkway near the loading bay has been delayed repeatedly despite escalating warning signs, and it was finally escalated only after a near-miss.",Slips and Falls,HIGH
+"A chemical storage tank was found to be slightly loose near the emergency exit, and was tightened immediately with no disruption to work.",Chemical,LOW
+"A stairwell was found to be slightly loose in the main production area, and was tightened immediately with no disruption to work.",Slips and Falls,LOW
+"An employee noted that a loading dock made a brief unusual sound during a routine inspection, but on inspection no defect was found.",Workplace,LOW
+"Critical safety guards on a rotating drum mixer were missing during a spot check, allowing direct access to moving parts during operation.",Machinery,HIGH
+"Maintenance on a mezzanine platform has been shut down twice this month, raising concern about its reliability.",Structural,MEDIUM
+"Severe corrosion was found on a seating arrangement in the packaging line, compromising structural integrity and posing a risk of sudden failure.",Ergonomics,HIGH
+"Maintenance on a band saw has been isolated twice this month, raising concern about its reliability.",Machinery,MEDIUM
+"Multiple prior warnings about a respirator mask were ignored, resulting in a serious failure that required the line to be repaired immediately.",PPE,HIGH
+A support beam exhibited an unusual odor while reviewing equipment logs; operations continued at reduced capacity while the cause was delayed.,Structural,MEDIUM
+A warehouse aisle displayed abnormal vibration while reviewing equipment logs. The equipment remains in use but has been flagged for closer monitoring.,Workplace,MEDIUM
+A worker narrowly avoided serious injury when a storm drain activated unexpectedly in the shipping bay due to a bypassed interlock.,Environmental,HIGH
+"Toxic fumes were detected in the chemical storage room after a fire alarm panel malfunctioned, requiring respiratory protection and immediate evacuation.",Fire,HIGH
+A label on a smoke detector near the boiler room had become faded and was replaced during routine upkeep.,Fire,LOW
+"Critical maintenance on a set of safety goggles has been delayed repeatedly despite escalating warning signs, and it was finally secured only after a near-miss.",PPE,HIGH
+"Moisture buildup was observed inside a rotating drum mixer in the outdoor storage yard, raising concern about corrosion if left unaddressed.",Machinery,MEDIUM
+"A worker reported mild discomfort after an extended shift working at a wastewater discharge line in the outdoor storage yard, prompting a review of the workstation setup.",Environmental,MEDIUM
+"An employee noted that a seating arrangement made a brief unusual sound during the morning shift, but on inspection no defect was found.",Ergonomics,LOW
+A light bulb flickered briefly near a first-aid station next to the employee break area and was replaced during the next maintenance round.,Emergency,LOW
+"A minor spill of water, unrelated to any hazardous material, was quickly wiped up near a steam boiler along the east corridor.",Process Safety,LOW
+An air compressor passed its scheduled inspection while performing a safety walk-through with only a trivial note about surface wear.,Equipment,LOW
+Uncontrolled release of chemical vapor from an exhaust vent forced an immediate evacuation of the surrounding work area.,Environmental,HIGH
+An incomplete set of PPE was found stored in the main production area; missing items were flagged and additional inspection was requested.,Housekeeping,MEDIUM
+"A minor paint chip was noted on a high-visibility vest near the loading dock, considered a cosmetic issue with no safety implication.",PPE,LOW
+A label on a hydraulic press in the north warehouse had become faded and was replaced during routine upkeep.,Equipment,LOW
