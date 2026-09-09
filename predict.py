@@ -2,6 +2,114 @@ import joblib
 
 
 # --------------------------------------------------
+# Check whether the input is safety-related
+# --------------------------------------------------
+
+def is_safety_report(report):
+
+    safety_keywords = [
+        # General safety
+        "safety",
+        "hazard",
+        "hazardous",
+        "risk",
+        "incident",
+        "accident",
+        "danger",
+        "unsafe",
+        "injury",
+        "injured",
+
+        # Workplace
+        "worker",
+        "workers",
+        "employee",
+        "employees",
+        "workplace",
+        "factory",
+        "production",
+        "site",
+        "area",
+
+        # Equipment / machinery
+        "machine",
+        "machinery",
+        "equipment",
+        "motor",
+        "pump",
+        "valve",
+        "pressure",
+        "vibration",
+        "leak",
+        "leaking",
+
+        # Electrical
+        "electrical",
+        "electric",
+        "wire",
+        "wiring",
+        "voltage",
+        "current",
+        "circuit",
+        "panel",
+        "spark",
+
+        # Fire / emergency
+        "fire",
+        "smoke",
+        "flame",
+        "alarm",
+        "emergency",
+        "evacuation",
+        "evacuate",
+
+        # Chemicals
+        "chemical",
+        "toxic",
+        "gas",
+        "fume",
+        "spill",
+        "acid",
+
+        # PPE
+        "ppe",
+        "helmet",
+        "gloves",
+        "goggles",
+        "mask",
+        "protective",
+
+        # Maintenance
+        "maintenance",
+        "repair",
+        "inspection",
+        "inspect",
+        "damaged",
+        "damage",
+        "broken",
+        "failure",
+
+        # Workplace hazards
+        "slip",
+        "fall",
+        "trip",
+        "exposed",
+        "exposure",
+        "blocked",
+        "obstruction"
+    ]
+
+    report_lower = report.lower()
+
+    for keyword in safety_keywords:
+
+        if keyword in report_lower:
+            return True
+
+    return False
+
+
+# --------------------------------------------------
 # Find important safety indicators
 # --------------------------------------------------
 
@@ -60,7 +168,7 @@ def get_recommendation(risk):
 
 
 # --------------------------------------------------
-# Load trained AI model and TF-IDF vectorizer
+# Load trained model and TF-IDF vectorizer
 # --------------------------------------------------
 
 model = joblib.load(
@@ -78,29 +186,74 @@ vectorizer = joblib.load(
 
 def analyze_report(report):
 
-    # Convert report into TF-IDF numbers
+    # ----------------------------------------------
+    # Step 1: Safety relevance check
+    # ----------------------------------------------
+
+    if not is_safety_report(report):
+
+        return {
+            "is_safety_report": False,
+            "risk": None,
+            "confidence": 0,
+            "indicators": [],
+            "recommendation":
+                "This does not appear to be a safety-related report. "
+                "Please enter an operational safety report."
+        }
+
+
+    # ----------------------------------------------
+    # Step 2: Convert report into TF-IDF
+    # ----------------------------------------------
+
     report_tfidf = vectorizer.transform([report])
 
-    # Predict risk level
+
+    # ----------------------------------------------
+    # Step 3: Predict risk
+    # ----------------------------------------------
+
     prediction = model.predict(report_tfidf)[0]
 
-    # Get probabilities
+
+    # ----------------------------------------------
+    # Step 4: Get probabilities
+    # ----------------------------------------------
+
     probabilities = model.predict_proba(report_tfidf)[0]
 
-    # Highest probability = confidence
     confidence = max(probabilities) * 100
 
-    # Find safety indicators
+
+    # ----------------------------------------------
+    # Step 5: Find safety indicators
+    # ----------------------------------------------
+
     indicators = find_indicators(report)
 
-    # Generate recommendation
+
+    # ----------------------------------------------
+    # Step 6: Generate recommendation
+    # ----------------------------------------------
+
     recommendation = get_recommendation(prediction)
 
-    # Final result
+
+    # ----------------------------------------------
+    # Step 7: Return result
+    # ----------------------------------------------
+
     result = {
+
+        "is_safety_report": True,
+
         "risk": prediction,
+
         "confidence": round(confidence, 2),
+
         "indicators": indicators,
+
         "recommendation": recommendation
     }
 
@@ -108,7 +261,7 @@ def analyze_report(report):
 
 
 # --------------------------------------------------
-# Test the backend directly
+# Test backend directly
 # --------------------------------------------------
 
 if __name__ == "__main__":
@@ -118,4 +271,5 @@ if __name__ == "__main__":
     result = analyze_report(report)
 
     print("\nResult:")
+
     print(result)
