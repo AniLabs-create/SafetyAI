@@ -1,128 +1,248 @@
 import streamlit as st
-
 from predict import analyze_report
 
 
 # --------------------------------------------------
-# Page configuration
+# Page configuration & Custom Styling
 # --------------------------------------------------
 
 st.set_page_config(
     page_title="Safety Risk Analyzer",
     page_icon="🛡️",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="collapsed",
 )
 
 
 # --------------------------------------------------
-# Title
+# Custom CSS
 # --------------------------------------------------
 
-st.title("Safety Risk Analyzer")
+st.markdown(
+    """
+    <style>
 
-st.write("AI-Powered Safety Intelligence")
+    /* Main container */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        max-width: 1000px;
+    }
 
-st.write(
-    "Analyze operational safety reports and identify potential risks "
-    "before they become incidents"
+    /* Metric values */
+    [data-testid="stMetricValue"] {
+        font-size: 1.8rem !important;
+        font-weight: 700;
+    }
+
+    /* Primary button */
+    .stButton>button {
+        width: 100%;
+        background-color: #0F172A;
+        color: #FFFFFF;
+        border-radius: 8px;
+        padding: 0.6rem 1rem;
+        font-weight: 600;
+        border: none;
+        transition: all 0.2s ease;
+    }
+
+    .stButton>button:hover {
+        background-color: #1E293B;
+        color: #FFFFFF;
+        border-color: transparent;
+    }
+
+    /* Indicator cards */
+    .indicator-card {
+        background-color: #F8FAFC;
+        border: 1px solid #E2E8F0;
+        border-left: 4px solid #3B82F6;
+        border-radius: 6px;
+        padding: 12px 16px;
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+        color: #334155;
+    }
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+
+        .indicator-card {
+            background-color: #1E293B;
+            border-color: #334155;
+            border-left: 4px solid #3B82F6;
+            color: #E2E8F0;
+        }
+
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 
 # --------------------------------------------------
-# Safety Report Input
+# Risk level styles
+# --------------------------------------------------
+
+RISK_STYLES = {
+    "HIGH": {
+        "icon": "🚨"
+    },
+
+    "MEDIUM": {
+        "icon": "⚠️"
+    },
+
+    "LOW": {
+        "icon": "✅"
+    },
+}
+
+
+# --------------------------------------------------
+# Header Section
+# --------------------------------------------------
+
+st.title("🛡️ Safety Risk Analyzer")
+
+st.caption("AI-Powered Operational Safety Intelligence")
+
+st.markdown(
+    "Analyze operational safety reports in real time to proactively identify "
+    "potential risks and actionable indicators before they escalate into incidents."
+)
+
+st.divider()
+
+
+# --------------------------------------------------
+# Input Section
 # --------------------------------------------------
 
 st.subheader("Safety Report Input")
 
 report = st.text_area(
     "Enter or paste the operational safety report below:",
-    height=200
+    height=180,
+    placeholder=(
+        "e.g., During the night shift at Plant B, a high-pressure valve "
+        "on Line 3 began leaking hydraulic fluid near an exposed power conduit..."
+    ),
+)
+
+analyze_clicked = st.button(
+    "Run Risk Analysis",
+    use_container_width=True
 )
 
 
 # --------------------------------------------------
-# Analyze Button
+# Analysis & Output Section
 # --------------------------------------------------
 
-if st.button("Run Risk Analysis"):
+if analyze_clicked:
 
-    # Check if the user entered anything
+    # --------------------------------------------------
+    # Empty input check
+    # --------------------------------------------------
+
     if not report.strip():
 
-        st.warning("Please enter a safety report first.")
+        st.warning(
+            "Please enter a safety report before running the analysis."
+        )
+
 
     else:
 
-        # Send the report to the backend
-        result = analyze_report(report)
+        # --------------------------------------------------
+        # Run backend analysis
+        # --------------------------------------------------
+
+        with st.spinner("Analyzing safety report with ML model..."):
+
+            result = analyze_report(report)
 
 
         # --------------------------------------------------
-        # Check whether this is actually a safety report
+        # Safety relevance check
         # --------------------------------------------------
 
-        if not result["is_safety_report"]:
+        if not result.get("is_safety_report", True):
+
+            st.divider()
 
             st.warning(
-                "⚠️ " + result["recommendation"]
+                "⚠️ " + result.get(
+                    "recommendation",
+                    "This does not appear to be a safety-related report."
+                )
+            )
+
+            st.info(
+                "Please enter an operational safety report "
+                "containing information about hazards, incidents, "
+                "equipment, workers, maintenance, or other safety conditions."
             )
 
 
         # --------------------------------------------------
-        # If it is a safety report, show ML results
+        # Valid safety report
         # --------------------------------------------------
 
         else:
 
-            risk = result["risk"]
-            confidence = result["confidence"]
-            indicators = result["indicators"]
-            recommendation = result["recommendation"]
+            risk = result.get("risk", "UNKNOWN").upper()
+
+            confidence = result.get("confidence", 0)
+
+            indicators = result.get("indicators", [])
+
+            recommendation = result.get(
+                "recommendation",
+                "Further safety assessment is recommended."
+            )
+
+
+            st.divider()
 
 
             # --------------------------------------------------
-            # Risk Result
+            # Risk overview metrics
             # --------------------------------------------------
 
-            st.subheader("Assessed Risk Level")
-
-            if risk == "HIGH":
-
-                st.error(f"🚨 {risk}")
-
-            elif risk == "MEDIUM":
-
-                st.warning(f"⚠️ {risk}")
-
-            else:
-
-                st.success(f"✅ {risk}")
+            style_info = RISK_STYLES.get(
+                risk,
+                {"icon": "🔍"}
+            )
 
 
-            # --------------------------------------------------
-            # Confidence
-            # --------------------------------------------------
-
-            st.subheader("Model Confidence")
-
-            st.write(f"{confidence}%")
+            col1, col2 = st.columns([1, 1])
 
 
-            # --------------------------------------------------
-            # Key Indicators
-            # --------------------------------------------------
+            with col1:
 
-            st.subheader("Key Indicators")
+                st.metric(
+                    label="Assessed Risk Level",
+                    value=f"{style_info['icon']} {risk}",
+                )
 
-            if indicators:
 
-                for indicator in indicators:
+            with col2:
 
-                    st.write(f"• {indicator}")
+                st.metric(
+                    label="Model Confidence",
+                    value=f"{confidence}%",
+                )
 
-            else:
 
-                st.write("• No specific indicators detected")
+            st.markdown(
+                "<br>",
+                unsafe_allow_html=True
+            )
 
 
             # --------------------------------------------------
@@ -131,14 +251,66 @@ if st.button("Run Risk Analysis"):
 
             st.subheader("Recommended Action")
 
+
             if risk == "HIGH":
 
-                st.error(recommendation)
+                st.error(
+                    f"**Action Required:** {recommendation}",
+                    icon="🚨"
+                )
+
 
             elif risk == "MEDIUM":
 
-                st.warning(recommendation)
+                st.warning(
+                    f"**Action Required:** {recommendation}",
+                    icon="⚠️"
+                )
+
+
+            elif risk == "LOW":
+
+                st.success(
+                    f"**Action Required:** {recommendation}",
+                    icon="✅"
+                )
+
 
             else:
 
-                st.success(recommendation)
+                st.info(
+                    f"**Action Required:** {recommendation}"
+                )
+
+
+            st.markdown(
+                "<br>",
+                unsafe_allow_html=True
+            )
+
+
+            # --------------------------------------------------
+            # Key Risk Indicators
+            # --------------------------------------------------
+
+            st.subheader("Key Risk Indicators Identified")
+
+
+            if indicators:
+
+                for item in indicators:
+
+                    st.markdown(
+                        f"""
+                        <div class="indicator-card">
+                            🔍 {item}
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+
+            else:
+
+                st.info(
+                    "No critical indicators detected in this report."
+                )
