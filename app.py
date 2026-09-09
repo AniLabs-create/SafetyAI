@@ -396,8 +396,163 @@ div[data-testid="stTextArea"] textarea::placeholder {
     padding: 20px;
 }
 
+
+/* =========================
+   AMBIENT BACKGROUND ORBS
+   ========================= */
+
+.ambient-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+}
+
+.orb-a {
+    top: -120px;
+    left: -100px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(56,189,248,0.35), transparent 70%);
+    animation: floatOrb 13s ease-in-out infinite;
+}
+
+.orb-b {
+    bottom: -140px;
+    right: -100px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(14,165,233,0.28), transparent 70%);
+    animation: floatOrb 16s ease-in-out infinite reverse;
+}
+
+@keyframes floatOrb {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -35px) scale(1.08); }
+}
+
+.block-container { position: relative; z-index: 1; }
+
+
+/* =========================
+   ENTRANCE ANIMATIONS
+   ========================= */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-icon       { animation: fadeInUp 0.6s ease both; }
+.hero-title      { animation: fadeInUp 0.6s ease 0.08s both; }
+.hero-subtitle   { animation: fadeInUp 0.6s ease 0.16s both; }
+.status-container{ animation: fadeInUp 0.6s ease 0.24s both; }
+.hero-description{ animation: fadeInUp 0.6s ease 0.32s both; }
+
+.result-card, .indicator-card {
+    animation: fadeInUp 0.5s ease both;
+}
+
+
+/* =========================
+   BUTTON SHIMMER
+   ========================= */
+
+.stButton > button {
+    position: relative;
+    overflow: hidden;
+}
+
+.stButton > button::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 60%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: translateX(-160%) skewX(-15deg);
+    transition: transform 0.6s ease;
+}
+
+.stButton > button:hover::after {
+    transform: translateX(220%) skewX(-15deg);
+}
+
+
+/* =========================
+   HIGH RISK PULSE
+   ========================= */
+
+@keyframes pulseRing {
+    0%   { box-shadow: 0 0 0 0 rgba(248,113,113,0.45); }
+    70%  { box-shadow: 0 0 0 16px rgba(248,113,113,0); }
+    100% { box-shadow: 0 0 0 0 rgba(248,113,113,0); }
+}
+
+.pulse-ring {
+    animation: pulseRing 1.8s ease-out infinite;
+    border-radius: 14px;
+}
+
+
+/* =========================
+   SCANNING LOADER
+   ========================= */
+
+.scan-loader {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    background: linear-gradient(145deg, #101722, #0B1018);
+    border: 1px solid #1F2D3D;
+    border-radius: 14px;
+    margin: 10px 0 20px;
+}
+
+.scan-bar {
+    position: relative;
+    flex: 1;
+    height: 6px;
+    background: #1E293B;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.scan-bar::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%; width: 40%;
+    background: linear-gradient(90deg, transparent, #38BDF8, transparent);
+    animation: scanSweep 1.1s ease-in-out infinite;
+}
+
+@keyframes scanSweep {
+    0%   { left: -40%; }
+    100% { left: 100%; }
+}
+
+.scan-text {
+    color: #7DD3FC;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
 </style>
 """,
+    unsafe_allow_html=True,
+)
+
+
+# ============================================================
+# AMBIENT ORBS (decorative, no JS needed)
+# ============================================================
+
+st.markdown(
+    '<div class="ambient-orb orb-a"></div><div class="ambient-orb orb-b"></div>',
     unsafe_allow_html=True,
 )
 
@@ -598,25 +753,41 @@ if analyze_clicked:
 
         else:
 
-            with st.spinner(
-                "Analyzing report with ML model..."
-            ):
+            scan_placeholder = st.empty()
+            scan_placeholder.markdown(
+                '<div class="scan-loader">'
+                '<div class="scan-bar"></div>'
+                '<div class="scan-text">Scanning report for risk indicators…</div>'
+                '</div>',
+                unsafe_allow_html=True,
+            )
 
-                try:
+            # A brief deliberate pause -- the model itself predicts in
+            # milliseconds, but showing the result instantly reads as
+            # "this didn't really analyze anything." This lets the
+            # scanning animation actually be seen before the reveal.
+            import time
+            time.sleep(0.9)
 
-                    result = analyze_report(report)
+            try:
 
-                except Exception as error:
+                result = analyze_report(report)
 
-                    st.error(
-                        "The risk analysis could not be completed."
-                    )
+            except Exception as error:
 
-                    st.caption(
-                        f"Backend error: {error}"
-                    )
+                scan_placeholder.empty()
 
-                    st.stop()
+                st.error(
+                    "The risk analysis could not be completed."
+                )
+
+                st.caption(
+                    f"Backend error: {error}"
+                )
+
+                st.stop()
+
+            scan_placeholder.empty()
 
 
             # =================================================
@@ -703,9 +874,11 @@ if analyze_clicked:
 
             with col1:
 
+                pulse_class = "pulse-ring" if risk == "HIGH" else ""
+
                 st.markdown(
                     f"""
-<div class="result-card">
+<div class="result-card {pulse_class}">
 <div class="result-label">Assessed Risk Level</div>
 <div class="result-value {risk_class}">
 {risk_icon} {risk}
@@ -729,15 +902,42 @@ if analyze_clicked:
 
                 st.markdown(
                     f"""
+<style>
+@keyframes fillBar {{ from {{ width: 0%; }} to {{ width: {confidence_width}%; }} }}
+</style>
 <div class="result-card">
 <div class="result-label">Model Confidence</div>
-<div class="result-value">{confidence:.2f}%</div>
+<div class="result-value" id="confidence-number">0.00%</div>
 <div class="confidence-track">
-<div class="confidence-fill" style="width:{confidence_width}%"></div>
+<div class="confidence-fill" style="width:{confidence_width}%; animation: fillBar 1s ease-out;"></div>
 </div>
 </div>
 """,
                     unsafe_allow_html=True,
+                )
+
+                components.html(
+                    f"""
+<script>
+(function() {{
+    const doc = window.parent.document;
+    const target = {confidence:.2f};
+    const el = doc.getElementById('confidence-number');
+    if (!el) return;
+    const start = performance.now();
+    const duration = 900;
+    function step(now) {{
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = (target * eased).toFixed(2) + '%';
+        if (t < 1) window.parent.requestAnimationFrame(step);
+    }}
+    window.parent.requestAnimationFrame(step);
+}})();
+</script>
+""",
+                    height=0,
+                    width=0,
                 )
 
 
@@ -803,7 +1003,7 @@ if analyze_clicked:
 
             if indicators:
 
-                for item in indicators:
+                for i, item in enumerate(indicators):
 
                     # Escape basic HTML-sensitive characters
                     safe_item = (
@@ -814,7 +1014,8 @@ if analyze_clicked:
                     )
 
                     st.markdown(
-                        f'<div class="indicator-card">'
+                        f'<div class="indicator-card" '
+                        f'style="animation-delay:{i * 0.08:.2f}s">'
                         f'<span class="indicator-icon">🔍</span>'
                         f'<span>{safe_item}</span>'
                         f'</div>',
