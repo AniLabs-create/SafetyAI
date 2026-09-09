@@ -22,20 +22,20 @@ st.markdown(
     """
     <style>
 
-    /* -------------------------------------------------------
+    /* ======================================================
        GLOBAL
-    ------------------------------------------------------- */
+       ====================================================== */
 
     .stApp {
         background:
             radial-gradient(
-                circle at 15% 10%,
+                circle at 10% 5%,
                 rgba(37, 99, 235, 0.10),
                 transparent 28%
             ),
             radial-gradient(
-                circle at 85% 20%,
-                rgba(16, 185, 129, 0.06),
+                circle at 90% 15%,
+                rgba(16, 185, 129, 0.05),
                 transparent 25%
             ),
             #080B12;
@@ -43,86 +43,86 @@ st.markdown(
 
     .block-container {
         max-width: 1050px;
-        padding-top: 2.5rem;
+        padding-top: 2rem;
         padding-bottom: 4rem;
     }
-
-
-    /* -------------------------------------------------------
-       REMOVE DEFAULT STREAMLIT FEEL
-       ------------------------------------------------------- */
 
     header[data-testid="stHeader"] {
         background: transparent;
     }
 
-    div[data-testid="stToolbar"] {
-        visibility: hidden;
-    }
 
-
-    /* -------------------------------------------------------
+    /* ======================================================
        HERO
-       ------------------------------------------------------- */
-
-    .hero {
-        text-align: center;
-        padding: 25px 10px 10px 10px;
-    }
-
-    .hero-icon {
-        font-size: 3.2rem;
-        margin-bottom: 5px;
-    }
+       ====================================================== */
 
     .hero-title {
-        font-size: 3rem;
+        text-align: center;
+        font-size: 3.1rem;
         font-weight: 800;
         letter-spacing: -1.5px;
         color: #F8FAFC;
-        margin-bottom: 5px;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
     }
 
     .hero-subtitle {
+        text-align: center;
         color: #94A3B8;
         font-size: 1.05rem;
-        margin-bottom: 18px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-description {
+        text-align: center;
+        color: #64748B;
+        font-size: 0.92rem;
+        line-height: 1.7;
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.8rem;
+    }
+
+    .status-container {
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
     .status-pill {
         display: inline-block;
-        padding: 6px 13px;
+        padding: 6px 14px;
         border-radius: 999px;
-        background: rgba(16, 185, 129, 0.10);
+        background: rgba(16, 185, 129, 0.08);
         border: 1px solid rgba(16, 185, 129, 0.25);
         color: #34D399;
-        font-size: 0.82rem;
-        font-weight: 600;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.4px;
     }
 
 
-    /* -------------------------------------------------------
-       SECTION HEADERS
-       ------------------------------------------------------- */
+    /* ======================================================
+       SECTION TITLES
+       ====================================================== */
 
     .section-title {
         color: #F8FAFC;
         font-size: 1.35rem;
-        font-weight: 700;
-        margin-top: 10px;
-        margin-bottom: 5px;
+        font-weight: 750;
+        margin-bottom: 0.25rem;
     }
 
     .section-description {
         color: #64748B;
-        font-size: 0.9rem;
-        margin-bottom: 15px;
+        font-size: 0.88rem;
+        margin-bottom: 1rem;
     }
 
 
-    /* -------------------------------------------------------
-       INPUT AREA
-       ------------------------------------------------------- */
+    /* ======================================================
+       TEXT AREA
+       ====================================================== */
 
     div[data-testid="stTextArea"] textarea {
         background-color: #11151F !important;
@@ -131,17 +131,18 @@ st.markdown(
         color: #E2E8F0 !important;
         font-size: 0.95rem !important;
         padding: 16px !important;
+        line-height: 1.6 !important;
     }
 
     div[data-testid="stTextArea"] textarea:focus {
-        border: 1px solid #3B82F6 !important;
+        border-color: #3B82F6 !important;
         box-shadow: 0 0 0 1px #3B82F6 !important;
     }
 
 
-    /* -------------------------------------------------------
+    /* ======================================================
        ANALYZE BUTTON
-       ------------------------------------------------------- */
+       ====================================================== */
 
     .stButton > button {
         width: 100%;
@@ -153,23 +154,25 @@ st.markdown(
             #2563EB,
             #1D4ED8
         );
-        color: white;
+        color: #FFFFFF;
         font-size: 1rem;
         font-weight: 700;
-        transition: 0.2s ease;
-        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.18);
+        transition: all 0.2s ease;
+        box-shadow:
+            0 8px 25px rgba(37, 99, 235, 0.18);
     }
 
     .stButton > button:hover {
         transform: translateY(-1px);
         border-color: #60A5FA;
-        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.28);
+        box-shadow:
+            0 12px 30px rgba(37, 99, 235, 0.30);
     }
 
 
-    /* -------------------------------------------------------
+    /* ======================================================
        RESULT CARDS
-       ------------------------------------------------------- */
+       ====================================================== */
 
     .result-card {
         background: linear-gradient(
@@ -180,128 +183,131 @@ st.markdown(
         border: 1px solid #202A3A;
         border-radius: 14px;
         padding: 22px;
-        height: 100%;
+        min-height: 125px;
     }
 
     .result-label {
         color: #64748B;
-        font-size: 0.85rem;
-        font-weight: 600;
+        font-size: 0.78rem;
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.6px;
-        margin-bottom: 8px;
+        letter-spacing: 0.7px;
+        margin-bottom: 10px;
     }
 
     .result-value {
-        color: #F8FAFC;
         font-size: 2rem;
         font-weight: 800;
     }
 
-
-    /* -------------------------------------------------------
-       RISK BADGES
-       ------------------------------------------------------- */
-
-    .risk-high {
+    .high-risk {
         color: #F87171;
     }
 
-    .risk-medium {
+    .medium-risk {
         color: #FBBF24;
     }
 
-    .risk-low {
+    .low-risk {
         color: #34D399;
     }
 
 
-    /* -------------------------------------------------------
+    /* ======================================================
        CONFIDENCE BAR
-       ------------------------------------------------------- */
+       ====================================================== */
 
     .confidence-track {
         width: 100%;
-        height: 8px;
+        height: 7px;
         background: #1E293B;
         border-radius: 999px;
         overflow: hidden;
-        margin-top: 12px;
+        margin-top: 14px;
     }
 
     .confidence-fill {
         height: 100%;
+        border-radius: 999px;
         background: linear-gradient(
             90deg,
             #2563EB,
             #60A5FA
         );
-        border-radius: 999px;
     }
 
 
-    /* -------------------------------------------------------
-       INDICATOR CARDS
-       ------------------------------------------------------- */
+    /* ======================================================
+       INDICATORS
+       ====================================================== */
 
     .indicator-card {
         display: flex;
         align-items: center;
         gap: 12px;
+
         background: #11151F;
+
         border: 1px solid #202A3A;
         border-left: 3px solid #3B82F6;
+
         border-radius: 10px;
+
         padding: 13px 16px;
+
         margin-bottom: 9px;
+
         color: #CBD5E1;
-        font-size: 0.93rem;
+
+        font-size: 0.92rem;
     }
 
     .indicator-icon {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
 
-    /* -------------------------------------------------------
-       RECOMMENDATION CARDS
-       ------------------------------------------------------- */
+    /* ======================================================
+       ACTION CARDS
+       ====================================================== */
 
     .action-card {
         border-radius: 12px;
         padding: 18px 20px;
         margin-top: 8px;
-        font-size: 0.95rem;
+
+        font-size: 0.94rem;
         line-height: 1.6;
     }
 
     .action-high {
         background: rgba(239, 68, 68, 0.08);
-        border: 1px solid rgba(239, 68, 68, 0.25);
+        border: 1px solid rgba(239, 68, 68, 0.28);
         color: #FCA5A5;
     }
 
     .action-medium {
         background: rgba(245, 158, 11, 0.08);
-        border: 1px solid rgba(245, 158, 11, 0.25);
+        border: 1px solid rgba(245, 158, 11, 0.28);
         color: #FCD34D;
     }
 
     .action-low {
         background: rgba(16, 185, 129, 0.08);
-        border: 1px solid rgba(16, 185, 129, 0.25);
+        border: 1px solid rgba(16, 185, 129, 0.28);
         color: #6EE7B7;
     }
 
 
-    /* -------------------------------------------------------
+    /* ======================================================
        FOOTER
-       ------------------------------------------------------- */
+       ====================================================== */
 
     .footer {
         text-align: center;
         color: #475569;
-        font-size: 0.78rem;
+        font-size: 0.75rem;
+        line-height: 1.6;
         margin-top: 45px;
     }
 
@@ -316,39 +322,36 @@ st.markdown(
 # ============================================================
 
 st.markdown(
+    "<div style='text-align:center; font-size:3.2rem;'>🛡️</div>",
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    '<div class="hero-title">Safety Risk Analyzer</div>',
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    '<div class="hero-subtitle">'
+    'AI-Powered Operational Safety Intelligence'
+    '</div>',
+    unsafe_allow_html=True,
+)
+
+st.markdown(
     """
-    <div class="hero">
-
-        <div class="hero-icon">🛡️</div>
-
-        <div class="hero-title">
-            Safety Risk Analyzer
-        </div>
-
-        <div class="hero-subtitle">
-            AI-Powered Operational Safety Intelligence
-        </div>
-
-        <div class="status-pill">
+    <div class="status-container">
+        <span class="status-pill">
             ● ML MODEL ONLINE
-        </div>
-
+        </span>
     </div>
     """,
     unsafe_allow_html=True,
 )
 
-
 st.markdown(
     """
-    <div style="
-        text-align:center;
-        color:#94A3B8;
-        font-size:0.95rem;
-        max-width:760px;
-        margin:15px auto 30px auto;
-        line-height:1.6;
-    ">
+    <div class="hero-description">
         Analyze operational safety reports and identify potential risks,
         key indicators, and recommended actions before they escalate
         into incidents.
@@ -356,7 +359,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
 
 st.divider()
 
@@ -366,11 +368,12 @@ st.divider()
 # ============================================================
 
 st.markdown(
-    """
-    <div class="section-title">
-        Safety Report Input
-    </div>
+    '<div class="section-title">Safety Report Input</div>',
+    unsafe_allow_html=True,
+)
 
+st.markdown(
+    """
     <div class="section-description">
         Provide an operational safety observation, incident report,
         or workplace hazard description.
@@ -405,7 +408,7 @@ analyze_clicked = st.button(
 if analyze_clicked:
 
     # --------------------------------------------------------
-    # Empty input
+    # EMPTY INPUT
     # --------------------------------------------------------
 
     if not report.strip():
@@ -414,11 +417,10 @@ if analyze_clicked:
             "Please enter a safety report before running the analysis."
         )
 
-
     else:
 
         # ----------------------------------------------------
-        # Run backend
+        # RUN ML BACKEND
         # ----------------------------------------------------
 
         with st.spinner(
@@ -429,71 +431,125 @@ if analyze_clicked:
 
 
         # ====================================================
-        # GATE 1 — NOT A SAFETY REPORT
+        # EXTRACT RESULT
         # ====================================================
 
-        if not result.get(
-            "is_safety_report",
-            True
-        ):
+        risk = result.get(
+            "risk",
+            "UNKNOWN"
+        ).upper()
+
+        confidence = float(
+            result.get(
+                "confidence",
+                0
+            )
+        )
+
+        indicators = result.get(
+            "indicators",
+            []
+        )
+
+        recommendation = result.get(
+            "recommendation",
+            "Further safety assessment is recommended."
+        )
+
+
+        # ====================================================
+        # SIMPLE NON-SAFETY TEXT CHECK
+        # ====================================================
+
+        safety_keywords = [
+            "machine",
+            "equipment",
+            "worker",
+            "workers",
+            "employee",
+            "hazard",
+            "danger",
+            "risk",
+            "safety",
+            "fire",
+            "smoke",
+            "chemical",
+            "leak",
+            "spill",
+            "injury",
+            "accident",
+            "maintenance",
+            "warning",
+            "pressure",
+            "vibration",
+            "electrical",
+            "electric",
+            "wire",
+            "voltage",
+            "helmet",
+            "ppe",
+            "protective",
+            "unsafe",
+            "emergency",
+            "factory",
+            "plant",
+            "inspection",
+            "slip",
+            "fall",
+            "exposure",
+            "ventilation",
+            "conduit",
+            "valve",
+            "boiler",
+            "conveyor",
+            "motor",
+            "pump",
+            "gas",
+            "toxic",
+            "corrosion",
+        ]
+
+        report_lower = report.lower()
+
+        is_safety_related = any(
+            keyword in report_lower
+            for keyword in safety_keywords
+        )
+
+
+        # ====================================================
+        # NON-SAFETY RESPONSE
+        # ====================================================
+
+        if not is_safety_related:
 
             st.divider()
+
+            st.markdown(
+                '<div class="section-title">'
+                'Analysis Result'
+                '</div>',
+                unsafe_allow_html=True,
+            )
 
             st.markdown(
                 """
                 <div class="action-card action-medium">
 
-                <strong>⚠️ Safety Report Not Detected</strong>
-                <br><br>
+                    <strong>⚠️ Safety Report Not Detected</strong>
 
-                The submitted text does not appear to describe
-                an operational safety condition.
+                    <br><br>
 
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
+                    The submitted text does not appear to describe
+                    an operational safety condition.
 
-            st.info(
-                result.get(
-                    "recommendation",
-                    "Please enter an operational safety report."
-                )
-            )
-
-
-        # ====================================================
-        # GATE 2 — INSUFFICIENT INFORMATION
-        # ====================================================
-
-        elif result.get(
-            "insufficient_information",
-            False
-        ):
-
-            st.divider()
-
-            st.markdown(
-                """
-                <div class="action-card action-medium">
-
-                <strong>⚠️ Insufficient Information</strong>
-                <br><br>
-
-                The report appears to be safety-related, but
-                there is not enough information to confidently
-                assess the risk level.
+                    Please provide a report describing a workplace
+                    hazard, equipment condition, incident,
+                    environmental risk, or safety observation.
 
                 </div>
                 """,
                 unsafe_allow_html=True,
-            )
-
-            st.info(
-                result.get(
-                    "recommendation",
-                    "Please provide more details about the hazard."
-                )
             )
 
 
@@ -503,42 +559,17 @@ if analyze_clicked:
 
         else:
 
-            risk = result.get(
-                "risk",
-                "UNKNOWN"
-            ).upper()
-
-            confidence = float(
-                result.get(
-                    "confidence",
-                    0
-                )
-            )
-
-            indicators = result.get(
-                "indicators",
-                []
-            )
-
-            recommendation = result.get(
-                "recommendation",
-                "Further safety assessment is recommended."
-            )
-
-
             st.divider()
 
-
-            # =================================================
-            # RESULT OVERVIEW
-            # =================================================
+            st.markdown(
+                '<div class="section-title">'
+                'Risk Assessment'
+                '</div>',
+                unsafe_allow_html=True,
+            )
 
             st.markdown(
                 """
-                <div class="section-title">
-                    Risk Assessment
-                </div>
-
                 <div class="section-description">
                     Machine-learning assessment generated from
                     the submitted safety report.
@@ -548,6 +579,35 @@ if analyze_clicked:
             )
 
 
+            # =================================================
+            # RISK STYLE
+            # =================================================
+
+            if risk == "HIGH":
+
+                risk_icon = "🚨"
+                risk_class = "high-risk"
+
+            elif risk == "MEDIUM":
+
+                risk_icon = "⚠️"
+                risk_class = "medium-risk"
+
+            elif risk == "LOW":
+
+                risk_icon = "✅"
+                risk_class = "low-risk"
+
+            else:
+
+                risk_icon = "🔍"
+                risk_class = ""
+
+
+            # =================================================
+            # RESULT CARDS
+            # =================================================
+
             col1, col2 = st.columns(
                 2,
                 gap="medium"
@@ -555,24 +615,8 @@ if analyze_clicked:
 
 
             # -------------------------------------------------
-            # Risk card
+            # RISK CARD
             # -------------------------------------------------
-
-            if risk == "HIGH":
-
-                risk_icon = "🚨"
-                risk_class = "risk-high"
-
-            elif risk == "MEDIUM":
-
-                risk_icon = "⚠️"
-                risk_class = "risk-medium"
-
-            else:
-
-                risk_icon = "✅"
-                risk_class = "risk-low"
-
 
             with col1:
 
@@ -595,10 +639,15 @@ if analyze_clicked:
 
 
             # -------------------------------------------------
-            # Confidence card
+            # CONFIDENCE CARD
             # -------------------------------------------------
 
             with col2:
+
+                confidence_width = min(
+                    max(confidence, 0),
+                    100
+                )
 
                 st.markdown(
                     f"""
@@ -616,8 +665,8 @@ if analyze_clicked:
 
                             <div
                                 class="confidence-fill"
-                                style="width:{min(confidence, 100)}%;"
-                            ></div>
+                                style="width:{confidence_width}%;">
+                            </div>
 
                         </div>
 
@@ -638,11 +687,9 @@ if analyze_clicked:
             # =================================================
 
             st.markdown(
-                """
-                <div class="section-title">
-                    Recommended Action
-                </div>
-                """,
+                '<div class="section-title">'
+                'Recommended Action'
+                '</div>',
                 unsafe_allow_html=True,
             )
 
@@ -692,11 +739,14 @@ if analyze_clicked:
             # =================================================
 
             st.markdown(
-                """
-                <div class="section-title">
-                    Key Risk Indicators Identified
-                </div>
+                '<div class="section-title">'
+                'Key Risk Indicators Identified'
+                '</div>',
+                unsafe_allow_html=True,
+            )
 
+            st.markdown(
+                """
                 <div class="section-description">
                     Safety-related signals detected in the report.
                 </div>
@@ -742,7 +792,7 @@ st.markdown(
     <div class="footer">
         Safety Risk Analyzer • Machine Learning Powered
         <br>
-        Designed for proactive operational safety assessment
+        Proactive operational safety assessment
     </div>
     """,
     unsafe_allow_html=True,
