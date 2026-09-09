@@ -35,7 +35,7 @@ st.markdown(
         font-weight: 700;
     }
 
-    /* Primary button */
+    /* Primary action button */
     .stButton>button {
         width: 100%;
         background-color: #0F172A;
@@ -65,7 +65,7 @@ st.markdown(
         color: #334155;
     }
 
-    /* Dark mode */
+    /* Dark mode support */
     @media (prefers-color-scheme: dark) {
 
         .indicator-card {
@@ -91,11 +91,9 @@ RISK_STYLES = {
     "HIGH": {
         "icon": "🚨"
     },
-
     "MEDIUM": {
         "icon": "⚠️"
     },
-
     "LOW": {
         "icon": "✅"
     },
@@ -119,7 +117,7 @@ st.divider()
 
 
 # --------------------------------------------------
-# Input Section
+# Safety Report Input
 # --------------------------------------------------
 
 st.subheader("Safety Report Input")
@@ -133,6 +131,11 @@ report = st.text_area(
     ),
 )
 
+
+# --------------------------------------------------
+# Analyze Button
+# --------------------------------------------------
+
 analyze_clicked = st.button(
     "Run Risk Analysis",
     use_container_width=True
@@ -140,13 +143,13 @@ analyze_clicked = st.button(
 
 
 # --------------------------------------------------
-# Analysis & Output Section
+# Analysis & Output
 # --------------------------------------------------
 
 if analyze_clicked:
 
     # --------------------------------------------------
-    # Empty input check
+    # Check for empty input
     # --------------------------------------------------
 
     if not report.strip():
@@ -159,16 +162,18 @@ if analyze_clicked:
     else:
 
         # --------------------------------------------------
-        # Run backend analysis
+        # Run backend ML analysis
         # --------------------------------------------------
 
-        with st.spinner("Analyzing safety report with ML model..."):
+        with st.spinner(
+            "Analyzing safety report with ML model..."
+        ):
 
             result = analyze_report(report)
 
 
         # --------------------------------------------------
-        # Safety relevance check
+        # Gate 1: Not a safety report
         # --------------------------------------------------
 
         if not result.get("is_safety_report", True):
@@ -183,23 +188,52 @@ if analyze_clicked:
             )
 
             st.info(
-                "Please enter an operational safety report "
-                "containing information about hazards, incidents, "
-                "equipment, workers, maintenance, or other safety conditions."
+                "Please enter an operational safety report containing "
+                "information about hazards, incidents, equipment, "
+                "workers, maintenance, or other safety conditions."
             )
 
 
         # --------------------------------------------------
-        # Valid safety report
+        # Gate 2: Safety-related but insufficient information
+        # --------------------------------------------------
+
+        elif result.get("insufficient_information", False):
+
+            st.divider()
+
+            st.warning(
+                "⚠️ Insufficient Information"
+            )
+
+            st.info(
+                result.get(
+                    "recommendation",
+                    "Please provide more information about the safety condition."
+                )
+            )
+
+
+        # --------------------------------------------------
+        # Valid safety report → show ML result
         # --------------------------------------------------
 
         else:
 
-            risk = result.get("risk", "UNKNOWN").upper()
+            risk = result.get(
+                "risk",
+                "UNKNOWN"
+            ).upper()
 
-            confidence = result.get("confidence", 0)
+            confidence = result.get(
+                "confidence",
+                0
+            )
 
-            indicators = result.get("indicators", [])
+            indicators = result.get(
+                "indicators",
+                []
+            )
 
             recommendation = result.get(
                 "recommendation",
@@ -207,20 +241,28 @@ if analyze_clicked:
             )
 
 
+            # --------------------------------------------------
+            # Results divider
+            # --------------------------------------------------
+
             st.divider()
 
 
             # --------------------------------------------------
-            # Risk overview metrics
+            # Risk Overview
             # --------------------------------------------------
 
             style_info = RISK_STYLES.get(
                 risk,
-                {"icon": "🔍"}
+                {
+                    "icon": "🔍"
+                }
             )
 
 
-            col1, col2 = st.columns([1, 1])
+            col1, col2 = st.columns(
+                [1, 1]
+            )
 
 
             with col1:
@@ -249,7 +291,9 @@ if analyze_clicked:
             # Recommended Action
             # --------------------------------------------------
 
-            st.subheader("Recommended Action")
+            st.subheader(
+                "Recommended Action"
+            )
 
 
             if risk == "HIGH":
@@ -293,7 +337,9 @@ if analyze_clicked:
             # Key Risk Indicators
             # --------------------------------------------------
 
-            st.subheader("Key Risk Indicators Identified")
+            st.subheader(
+                "Key Risk Indicators Identified"
+            )
 
 
             if indicators:
@@ -308,6 +354,7 @@ if analyze_clicked:
                         """,
                         unsafe_allow_html=True,
                     )
+
 
             else:
 

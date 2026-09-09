@@ -8,7 +8,6 @@ import joblib
 def is_safety_report(report):
 
     safety_keywords = [
-        # General safety
         "safety",
         "hazard",
         "hazardous",
@@ -20,7 +19,6 @@ def is_safety_report(report):
         "injury",
         "injured",
 
-        # Workplace
         "worker",
         "workers",
         "employee",
@@ -29,9 +27,7 @@ def is_safety_report(report):
         "factory",
         "production",
         "site",
-        "area",
 
-        # Equipment / machinery
         "machine",
         "machinery",
         "equipment",
@@ -43,7 +39,6 @@ def is_safety_report(report):
         "leak",
         "leaking",
 
-        # Electrical
         "electrical",
         "electric",
         "wire",
@@ -54,7 +49,6 @@ def is_safety_report(report):
         "panel",
         "spark",
 
-        # Fire / emergency
         "fire",
         "smoke",
         "flame",
@@ -63,7 +57,6 @@ def is_safety_report(report):
         "evacuation",
         "evacuate",
 
-        # Chemicals
         "chemical",
         "toxic",
         "gas",
@@ -71,7 +64,6 @@ def is_safety_report(report):
         "spill",
         "acid",
 
-        # PPE
         "ppe",
         "helmet",
         "gloves",
@@ -79,7 +71,6 @@ def is_safety_report(report):
         "mask",
         "protective",
 
-        # Maintenance
         "maintenance",
         "repair",
         "inspection",
@@ -89,7 +80,6 @@ def is_safety_report(report):
         "broken",
         "failure",
 
-        # Workplace hazards
         "slip",
         "fall",
         "trip",
@@ -110,6 +100,66 @@ def is_safety_report(report):
 
 
 # --------------------------------------------------
+# Check whether enough information is provided
+# --------------------------------------------------
+
+def has_enough_information(report):
+
+    information_keywords = [
+        "machine",
+        "machinery",
+        "equipment",
+        "worker",
+        "workers",
+        "employee",
+        "employees",
+        "factory",
+        "production",
+        "plant",
+        "area",
+        "site",
+        "room",
+        "pipe",
+        "valve",
+        "tank",
+        "panel",
+        "wire",
+        "electrical",
+        "chemical",
+        "fire",
+        "smoke",
+        "leak",
+        "pressure",
+        "vibration",
+        "maintenance",
+        "inspection",
+        "damage",
+        "damaged",
+        "broken",
+        "alarm",
+        "spill",
+        "exposed",
+        "exposure",
+        "ppe",
+        "injury",
+        "injured",
+        "hazard"
+    ]
+
+    report_lower = report.lower()
+
+    matches = 0
+
+    for keyword in information_keywords:
+
+        if keyword in report_lower:
+            matches += 1
+
+    # We want at least two meaningful safety details
+    return matches >= 2
+
+
+# --------------------------------------------------
 # Find important safety indicators
 # --------------------------------------------------
 
@@ -120,16 +170,25 @@ def find_indicators(report):
     keywords = {
         "warning": "Warning ignored",
         "ignored": "Warning ignored",
+
         "maintenance delayed": "Maintenance delayed",
         "maintenance has been delayed": "Maintenance delayed",
+
         "abnormal vibration": "Abnormal vibration",
         "severe vibration": "Severe vibration",
+
         "pressure": "Abnormal pressure",
+
         "leak": "Leak detected",
+
         "workers remain": "Workers remain in hazardous area",
+
         "exposed": "Worker exposure detected",
+
         "fire": "Fire hazard",
+
         "smoke": "Smoke detected",
+
         "chemical": "Chemical hazard"
     }
 
@@ -138,6 +197,7 @@ def find_indicators(report):
     for keyword, indicator in keywords.items():
 
         if keyword in report_lower and indicator not in indicators:
+
             indicators.append(indicator)
 
     return indicators
@@ -168,7 +228,7 @@ def get_recommendation(risk):
 
 
 # --------------------------------------------------
-# Load trained model and TF-IDF vectorizer
+# Load trained model and vectorizer
 # --------------------------------------------------
 
 model = joblib.load(
@@ -187,7 +247,7 @@ vectorizer = joblib.load(
 def analyze_report(report):
 
     # ----------------------------------------------
-    # Step 1: Safety relevance check
+    # Step 1: Check safety relevance
     # ----------------------------------------------
 
     if not is_safety_report(report):
@@ -204,21 +264,41 @@ def analyze_report(report):
 
 
     # ----------------------------------------------
-    # Step 2: Convert report into TF-IDF
+    # Step 2: Check information quality
+    # ----------------------------------------------
+
+    if not has_enough_information(report):
+
+        return {
+            "is_safety_report": True,
+            "insufficient_information": True,
+            "risk": None,
+            "confidence": 0,
+            "indicators": [],
+            "recommendation":
+                "The report appears to be safety-related, "
+                "but there is not enough information to determine "
+                "the risk level. Please provide more details about "
+                "the hazard, equipment, workers, or current conditions."
+        }
+
+
+    # ----------------------------------------------
+    # Step 3: Convert report to TF-IDF
     # ----------------------------------------------
 
     report_tfidf = vectorizer.transform([report])
 
 
     # ----------------------------------------------
-    # Step 3: Predict risk
+    # Step 4: Predict risk
     # ----------------------------------------------
 
     prediction = model.predict(report_tfidf)[0]
 
 
     # ----------------------------------------------
-    # Step 4: Get probabilities
+    # Step 5: Get probabilities
     # ----------------------------------------------
 
     probabilities = model.predict_proba(report_tfidf)[0]
@@ -227,37 +307,31 @@ def analyze_report(report):
 
 
     # ----------------------------------------------
-    # Step 5: Find safety indicators
+    # Step 6: Find indicators
     # ----------------------------------------------
 
     indicators = find_indicators(report)
 
 
     # ----------------------------------------------
-    # Step 6: Generate recommendation
+    # Step 7: Generate recommendation
     # ----------------------------------------------
 
     recommendation = get_recommendation(prediction)
 
 
     # ----------------------------------------------
-    # Step 7: Return result
+    # Step 8: Return result
     # ----------------------------------------------
 
-    result = {
-
+    return {
         "is_safety_report": True,
-
+        "insufficient_information": False,
         "risk": prediction,
-
         "confidence": round(confidence, 2),
-
         "indicators": indicators,
-
         "recommendation": recommendation
     }
-
-    return result
 
 
 # --------------------------------------------------
