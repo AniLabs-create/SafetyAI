@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from predict import analyze_report
 
 
@@ -11,6 +12,70 @@ st.set_page_config(
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="collapsed",
+)
+
+
+# ============================================================
+# CURSOR GLOW EFFECT
+# ============================================================
+# Streamlit's st.markdown(unsafe_allow_html=True) inserts HTML via
+# innerHTML, and browsers deliberately do NOT execute <script> tags
+# added that way -- so a plain CSS injection can't do anything that
+# needs live mouse tracking. components.html() renders inside an
+# iframe where scripts DO run; from there we reach into
+# window.parent.document (same-origin, so this is allowed) to attach
+# the glow element and mousemove listener to the actual app page.
+# The `if already exists, stop` guard matters because Streamlit
+# re-runs this whole script on every interaction (button clicks,
+# etc.) -- without it we'd stack up duplicate glow divs and duplicate
+# mousemove listeners on every rerun.
+
+components.html(
+    """
+<script>
+(function() {
+    const doc = window.parent.document;
+    if (doc.getElementById('cursor-glow')) return;
+
+    const style = doc.createElement('style');
+    style.innerHTML = `
+        #cursor-glow{
+            position:fixed;top:0;left:0;width:420px;height:420px;border-radius:50%;
+            background:radial-gradient(circle, rgba(56,189,248,0.32) 0%, rgba(56,189,248,0.11) 42%, transparent 70%);
+            pointer-events:none;z-index:999999;transform:translate(-50%,-50%);
+            will-change:transform;opacity:0;transition:opacity 0.4s ease;
+            mix-blend-mode:screen;
+        }
+        #cursor-glow.visible{opacity:1;}
+    `;
+    doc.head.appendChild(style);
+
+    const glow = doc.createElement('div');
+    glow.id = 'cursor-glow';
+    doc.body.appendChild(glow);
+
+    let mouseX = window.parent.innerWidth / 2, mouseY = window.parent.innerHeight / 2;
+    let glowX = mouseX, glowY = mouseY;
+    let active = false;
+
+    doc.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX; mouseY = e.clientY;
+        if (!active) { active = true; glow.classList.add('visible'); }
+    });
+    doc.addEventListener('mouseleave', () => glow.classList.remove('visible'));
+
+    function tick() {
+        glowX += (mouseX - glowX) * 0.12;
+        glowY += (mouseY - glowY) * 0.12;
+        glow.style.transform = `translate(${glowX}px, ${glowY}px) translate(-50%, -50%)`;
+        window.parent.requestAnimationFrame(tick);
+    }
+    tick();
+})();
+</script>
+""",
+    height=0,
+    width=0,
 )
 
 
