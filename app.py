@@ -20,414 +20,319 @@ st.set_page_config(
 
 st.markdown(
     """
-    <style>
-
-    /* ========================================================
-       GLOBAL BACKGROUND
-       ======================================================== */
-
-    .stApp {
-        background:
-            radial-gradient(
-                circle at 8% 5%,
-                rgba(56, 189, 248, 0.10),
-                transparent 30%
-            ),
-            radial-gradient(
-                circle at 92% 15%,
-                rgba(14, 165, 233, 0.07),
-                transparent 28%
-            ),
-            #070B12;
-    }
-
-    .block-container {
-        max-width: 1050px;
-        padding-top: 2.2rem;
-        padding-bottom: 4rem;
-    }
-
-    header[data-testid="stHeader"] {
-        background: transparent;
-    }
-
-
-    /* ========================================================
-       HERO
-       ======================================================== */
-
-    .hero-icon {
-        text-align: center;
-        font-size: 3.4rem;
-        margin-bottom: 5px;
-    }
-
-    .hero-title {
-        text-align: center;
-        font-size: 3.1rem;
-        font-weight: 800;
-        letter-spacing: -1.5px;
-        color: #F8FAFC;
-        margin-bottom: 5px;
-    }
-
-    .hero-subtitle {
-        text-align: center;
-        color: #7DD3FC;
-        font-size: 1.08rem;
-        font-weight: 500;
-        margin-bottom: 14px;
-    }
+<style>
+
+/* =========================
+   MAIN APP
+   ========================= */
+
+.stApp {
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(56, 189, 248, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(14, 165, 233, 0.07),
+            transparent 28%
+        ),
+        #070B12;
+}
+
+.block-container {
+    max-width: 1050px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero-icon {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+}
+
+.hero-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #F8FAFC;
+    margin-bottom: 5px;
+}
+
+.hero-subtitle {
+    text-align: center;
+    color: #7DD3FC;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    text-align: center;
+    color: #94A3B8;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    max-width: 780px;
+    margin: 0 auto 20px auto;
+}
+
+.status-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 7px 15px;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.28);
+    color: #67E8F9;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+.section-title {
+    color: #F8FAFC;
+    font-size: 1.35rem;
+    font-weight: 750;
+    margin-bottom: 5px;
+}
+
+.section-description {
+    color: #64748B;
+    font-size: 0.88rem;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   TEXT AREA
+   ========================= */
 
-    .hero-description {
-        text-align: center;
-        color: #94A3B8;
-        font-size: 0.93rem;
-        line-height: 1.7;
-        max-width: 780px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 22px;
-    }
+div[data-testid="stTextArea"] textarea {
+    background-color: #0E141F !important;
+    border: 1px solid #26364A !important;
+    border-radius: 12px !important;
+    color: #E2E8F0 !important;
+    font-size: 0.95rem !important;
+    padding: 16px !important;
+    line-height: 1.6 !important;
+}
 
-    .status-container {
-        text-align: center;
-        margin-bottom: 28px;
-    }
+div[data-testid="stTextArea"] textarea:focus {
+    border-color: #38BDF8 !important;
+    box-shadow:
+        0 0 0 1px #38BDF8,
+        0 0 18px rgba(56, 189, 248, 0.10) !important;
+}
 
-    .status-pill {
-        display: inline-block;
-        padding: 7px 15px;
-        border-radius: 999px;
+div[data-testid="stTextArea"] textarea::placeholder {
+    color: #64748B !important;
+}
 
-        background: rgba(34, 211, 238, 0.08);
-        border: 1px solid rgba(34, 211, 238, 0.28);
 
-        color: #67E8F9;
+/* =========================
+   BUTTON
+   ========================= */
 
-        font-size: 0.76rem;
-        font-weight: 700;
+.stButton > button {
+    width: 100%;
+    height: 54px;
 
-        letter-spacing: 0.6px;
-    }
+    border-radius: 11px;
 
+    border: 1px solid #38BDF8;
 
-    /* ========================================================
-       SECTION TITLES
-       ======================================================== */
+    background:
+        linear-gradient(
+            135deg,
+            #0284C7,
+            #0EA5E9
+        );
 
-    .section-title {
-        color: #F8FAFC;
-        font-size: 1.35rem;
-        font-weight: 750;
-        margin-bottom: 5px;
-    }
+    color: #FFFFFF;
 
-    .section-description {
-        color: #64748B;
-        font-size: 0.88rem;
-        margin-bottom: 15px;
-    }
+    font-size: 1rem;
+    font-weight: 700;
 
+    box-shadow:
+        0 8px 25px rgba(14, 165, 233, 0.16);
 
-    /* ========================================================
-       TEXT AREA
-       ======================================================== */
+    transition: all 0.2s ease;
+}
 
-    div[data-testid="stTextArea"] textarea {
-        background-color: #0E141F !important;
+.stButton > button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #0EA5E9,
+            #38BDF8
+        );
 
-        border: 1px solid #26364A !important;
+    border-color: #7DD3FC;
 
-        border-radius: 12px !important;
+    transform: translateY(-1px);
 
-        color: #E2E8F0 !important;
+    box-shadow:
+        0 12px 32px rgba(14, 165, 233, 0.28);
+}
 
-        font-size: 0.95rem !important;
 
-        padding: 16px !important;
+/* =========================
+   RESULT CARDS
+   ========================= */
 
-        line-height: 1.6 !important;
+.result-card {
+    background:
+        linear-gradient(
+            145deg,
+            #101722,
+            #0B1018
+        );
 
-        transition: all 0.2s ease;
-    }
+    border: 1px solid #1F2D3D;
 
-    div[data-testid="stTextArea"] textarea:focus {
-        border-color: #38BDF8 !important;
+    border-radius: 14px;
 
-        box-shadow:
-            0 0 0 1px #38BDF8,
-            0 0 18px rgba(56, 189, 248, 0.10) !important;
-    }
+    padding: 22px;
 
-    div[data-testid="stTextArea"] textarea::placeholder {
-        color: #64748B !important;
-    }
+    min-height: 120px;
 
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.15);
+}
 
-    /* ========================================================
-       ANALYZE BUTTON
-       ======================================================== */
+.result-label {
+    color: #64748B;
 
-    .stButton > button {
+    font-size: 0.76rem;
 
-        width: 100%;
+    font-weight: 700;
 
-        height: 54px;
+    text-transform: uppercase;
 
-        border-radius: 11px;
+    letter-spacing: 0.8px;
 
-        border: 1px solid #38BDF8;
+    margin-bottom: 10px;
+}
 
-        background:
-            linear-gradient(
-                135deg,
-                #0284C7,
-                #0EA5E9
-            );
+.result-value {
+    font-size: 2rem;
+    font-weight: 800;
+}
 
-        color: #FFFFFF;
+.high-risk {
+    color: #F87171;
+}
 
-        font-size: 1rem;
+.medium-risk {
+    color: #FBBF24;
+}
 
-        font-weight: 700;
+.low-risk {
+    color: #34D399;
+}
 
-        letter-spacing: 0.2px;
 
-        transition: all 0.2s ease;
+/* =========================
+   CONFIDENCE BAR
+   ========================= */
 
-        box-shadow:
-            0 8px 25px rgba(14, 165, 233, 0.16);
-    }
+.confidence-track {
+    width: 100%;
+    height: 7px;
 
-    .stButton > button:hover {
+    background: #1E293B;
 
-        background:
-            linear-gradient(
-                135deg,
-                #0EA5E9,
-                #38BDF8
-            );
+    border-radius: 999px;
 
-        border-color: #7DD3FC;
+    overflow: hidden;
 
-        transform: translateY(-1px);
+    margin-top: 14px;
+}
 
-        box-shadow:
-            0 12px 32px rgba(14, 165, 233, 0.28);
-    }
+.confidence-fill {
+    height: 100%;
 
+    border-radius: 999px;
 
-    /* ========================================================
-       RESULT CARDS
-       ======================================================== */
+    background:
+        linear-gradient(
+            90deg,
+            #06B6D4,
+            #38BDF8
+        );
+}
 
-    .result-card {
 
-        background:
-            linear-gradient(
-                145deg,
-                #101722,
-                #0B1018
-            );
+/* =========================
+   INDICATORS
+   ========================= */
 
-        border: 1px solid #1F2D3D;
+.indicator-card {
+    display: flex;
 
-        border-radius: 14px;
+    align-items: center;
 
-        padding: 22px;
+    gap: 12px;
 
-        min-height: 125px;
+    background: #0E141F;
 
-        box-shadow:
-            0 8px 30px rgba(0, 0, 0, 0.15);
-    }
+    border: 1px solid #1F2D3D;
 
-    .result-label {
+    border-left: 3px solid #38BDF8;
 
-        color: #64748B;
+    border-radius: 10px;
 
-        font-size: 0.76rem;
+    padding: 13px 16px;
 
-        font-weight: 700;
+    margin-bottom: 9px;
 
-        text-transform: uppercase;
+    color: #CBD5E1;
 
-        letter-spacing: 0.8px;
+    font-size: 0.92rem;
+}
 
-        margin-bottom: 10px;
-    }
+.indicator-icon {
+    color: #38BDF8;
+}
 
-    .result-value {
 
-        font-size: 2rem;
+/* =========================
+   FOOTER
+   ========================= */
 
-        font-weight: 800;
-    }
+.footer {
+    text-align: center;
 
-    .high-risk {
-        color: #F87171;
-    }
+    color: #475569;
 
-    .medium-risk {
-        color: #FBBF24;
-    }
+    font-size: 0.75rem;
 
-    .low-risk {
-        color: #34D399;
-    }
+    line-height: 1.6;
 
+    margin-top: 45px;
 
-    /* ========================================================
-       CONFIDENCE BAR
-       ======================================================== */
+    padding: 20px;
+}
 
-    .confidence-track {
-
-        width: 100%;
-
-        height: 7px;
-
-        background: #1E293B;
-
-        border-radius: 999px;
-
-        overflow: hidden;
-
-        margin-top: 14px;
-    }
-
-    .confidence-fill {
-
-        height: 100%;
-
-        border-radius: 999px;
-
-        background:
-            linear-gradient(
-                90deg,
-                #06B6D4,
-                #38BDF8
-            );
-    }
-
-
-    /* ========================================================
-       INDICATORS
-       ======================================================== */
-
-    .indicator-card {
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 12px;
-
-        background: #0E141F;
-
-        border: 1px solid #1F2D3D;
-
-        border-left: 3px solid #38BDF8;
-
-        border-radius: 10px;
-
-        padding: 13px 16px;
-
-        margin-bottom: 9px;
-
-        color: #CBD5E1;
-
-        font-size: 0.92rem;
-
-        transition: all 0.15s ease;
-    }
-
-    .indicator-card:hover {
-
-        border-left-color: #67E8F9;
-
-        background: #111A27;
-    }
-
-    .indicator-icon {
-
-        color: #38BDF8;
-
-        font-size: 0.95rem;
-    }
-
-
-    /* ========================================================
-       ACTION CARDS
-       ======================================================== */
-
-    .action-card {
-
-        border-radius: 12px;
-
-        padding: 18px 20px;
-
-        margin-top: 8px;
-
-        font-size: 0.94rem;
-
-        line-height: 1.6;
-    }
-
-    .action-high {
-
-        background:
-            rgba(239, 68, 68, 0.08);
-
-        border:
-            1px solid rgba(239, 68, 68, 0.28);
-
-        color: #FCA5A5;
-    }
-
-    .action-medium {
-
-        background:
-            rgba(245, 158, 11, 0.08);
-
-        border:
-            1px solid rgba(245, 158, 11, 0.28);
-
-        color: #FCD34D;
-    }
-
-    .action-low {
-
-        background:
-            rgba(16, 185, 129, 0.08);
-
-        border:
-            1px solid rgba(16, 185, 129, 0.28);
-
-        color: #6EE7B7;
-    }
-
-
-    /* ========================================================
-       FOOTER
-       ======================================================== */
-
-    .footer {
-
-        text-align: center;
-
-        color: #475569;
-
-        font-size: 0.75rem;
-
-        line-height: 1.6;
-
-        margin-top: 50px;
-    }
-
-    </style>
-    """,
+</style>
+""",
     unsafe_allow_html=True,
 )
 
@@ -447,31 +352,23 @@ st.markdown(
 )
 
 st.markdown(
-    '<div class="hero-subtitle">'
-    'AI-Powered Operational Safety Intelligence'
+    '<div class="hero-subtitle">AI-Powered Operational Safety Intelligence</div>',
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    '<div class="status-container">'
+    '<span class="status-pill">● ML MODEL ONLINE</span>'
     '</div>',
     unsafe_allow_html=True,
 )
 
 st.markdown(
-    """
-    <div class="status-container">
-        <span class="status-pill">
-            ● ML MODEL ONLINE
-        </span>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-st.markdown(
-    """
-    <div class="hero-description">
-        Analyze operational safety reports and identify potential risks,
-        key indicators, and recommended actions before they escalate
-        into incidents.
-    </div>
-    """,
+    '<div class="hero-description">'
+    'Analyze operational safety reports and identify potential risks, '
+    'key indicators, and recommended actions before they escalate '
+    'into incidents.'
+    '</div>',
     unsafe_allow_html=True,
 )
 
@@ -488,15 +385,12 @@ st.markdown(
 )
 
 st.markdown(
-    """
-    <div class="section-description">
-        Provide an operational safety observation, incident report,
-        or workplace hazard description.
-    </div>
-    """,
+    '<div class="section-description">'
+    'Provide an operational safety observation, incident report, '
+    'or workplace hazard description.'
+    '</div>',
     unsafe_allow_html=True,
 )
-
 
 report = st.text_area(
     "Safety report",
@@ -508,7 +402,6 @@ report = st.text_area(
         "power conduit..."
     ),
 )
-
 
 analyze_clicked = st.button(
     "⚡  Run Risk Analysis",
@@ -523,7 +416,7 @@ analyze_clicked = st.button(
 if analyze_clicked:
 
     # --------------------------------------------------------
-    # EMPTY INPUT CHECK
+    # EMPTY INPUT
     # --------------------------------------------------------
 
     if not report.strip():
@@ -535,7 +428,7 @@ if analyze_clicked:
     else:
 
         # ----------------------------------------------------
-        # BASIC SAFETY CONTEXT CHECK
+        # SAFETY CONTEXT CHECK
         # ----------------------------------------------------
 
         safety_keywords = [
@@ -595,7 +488,6 @@ if analyze_clicked:
             "toxic",
             "corrosion",
             "hazardous",
-            "spill",
         ]
 
         report_lower = report.lower()
@@ -607,7 +499,7 @@ if analyze_clicked:
 
 
         # ====================================================
-        # NON-SAFETY TEXT
+        # NON-SAFETY INPUT
         # ====================================================
 
         if not is_safety_related:
@@ -615,39 +507,28 @@ if analyze_clicked:
             st.divider()
 
             st.markdown(
-                '<div class="section-title">'
-                'Analysis Result'
-                '</div>',
+                '<div class="section-title">Analysis Result</div>',
                 unsafe_allow_html=True,
             )
 
-            st.markdown(
-                """
-                <div class="action-card action-medium">
+            st.warning(
+                "⚠️ Safety Report Not Detected"
+            )
 
-                    <strong>
-                        ⚠️ Safety Report Not Detected
-                    </strong>
+            st.info(
+                "The submitted text does not appear to describe "
+                "an operational safety condition."
+            )
 
-                    <br><br>
-
-                    The submitted text does not appear to describe
-                    an operational safety condition.
-
-                    <br><br>
-
-                    Please provide a report describing a workplace
-                    hazard, equipment condition, incident,
-                    environmental risk, or safety observation.
-
-                </div>
-                """,
-                unsafe_allow_html=True,
+            st.caption(
+                "Please provide a report describing a workplace hazard, "
+                "equipment condition, incident, environmental risk, "
+                "or safety observation."
             )
 
 
         # ====================================================
-        # SAFETY REPORT → ML MODEL
+        # ML ANALYSIS
         # ====================================================
 
         else:
@@ -681,7 +562,6 @@ if analyze_clicked:
                 result.get("risk") or "UNKNOWN"
             ).upper()
 
-
             try:
 
                 confidence = float(
@@ -692,11 +572,7 @@ if analyze_clicked:
 
                 confidence = 0.0
 
-
-            indicators = result.get(
-                "indicators"
-            ) or []
-
+            indicators = result.get("indicators") or []
 
             recommendation = str(
                 result.get("recommendation")
@@ -705,7 +581,7 @@ if analyze_clicked:
 
 
             # =================================================
-            # RISK STYLE
+            # RISK STYLING
             # =================================================
 
             if risk == "HIGH":
@@ -730,25 +606,21 @@ if analyze_clicked:
 
 
             # =================================================
-            # RESULT SECTION
+            # RESULT HEADER
             # =================================================
 
             st.divider()
 
             st.markdown(
-                '<div class="section-title">'
-                'Risk Assessment'
-                '</div>',
+                '<div class="section-title">Risk Assessment</div>',
                 unsafe_allow_html=True,
             )
 
             st.markdown(
-                """
-                <div class="section-description">
-                    Machine-learning assessment generated from
-                    the submitted safety report.
-                </div>
-                """,
+                '<div class="section-description">'
+                'Machine-learning assessment generated from '
+                'the submitted safety report.'
+                '</div>',
                 unsafe_allow_html=True,
             )
 
@@ -757,10 +629,7 @@ if analyze_clicked:
             # RESULT CARDS
             # =================================================
 
-            col1, col2 = st.columns(
-                2,
-                gap="medium"
-            )
+            col1, col2 = st.columns(2)
 
 
             # -------------------------------------------------
@@ -771,18 +640,13 @@ if analyze_clicked:
 
                 st.markdown(
                     f"""
-                    <div class="result-card">
-
-                        <div class="result-label">
-                            Assessed Risk Level
-                        </div>
-
-                        <div class="result-value {risk_class}">
-                            {risk_icon} {risk}
-                        </div>
-
-                    </div>
-                    """,
+<div class="result-card">
+<div class="result-label">Assessed Risk Level</div>
+<div class="result-value {risk_class}">
+{risk_icon} {risk}
+</div>
+</div>
+""",
                     unsafe_allow_html=True,
                 )
 
@@ -798,38 +662,21 @@ if analyze_clicked:
                     100
                 )
 
-
                 st.markdown(
                     f"""
-                    <div class="result-card">
-
-                        <div class="result-label">
-                            Model Confidence
-                        </div>
-
-                        <div class="result-value">
-                            {confidence:.2f}%
-                        </div>
-
-                        <div class="confidence-track">
-
-                            <div
-                                class="confidence-fill"
-                                style="width:{confidence_width}%;">
-                            </div>
-
-                        </div>
-
-                    </div>
-                    """,
+<div class="result-card">
+<div class="result-label">Model Confidence</div>
+<div class="result-value">{confidence:.2f}%</div>
+<div class="confidence-track">
+<div class="confidence-fill" style="width:{confidence_width}%"></div>
+</div>
+</div>
+""",
                     unsafe_allow_html=True,
                 )
 
 
-            st.markdown(
-                "<br>",
-                unsafe_allow_html=True
-            )
+            st.write("")
 
 
             # =================================================
@@ -837,51 +684,37 @@ if analyze_clicked:
             # =================================================
 
             st.markdown(
-                '<div class="section-title">'
-                'Recommended Action'
-                '</div>',
+                '<div class="section-title">Recommended Action</div>',
                 unsafe_allow_html=True,
             )
 
 
             if risk == "HIGH":
 
-                action_class = "action-high"
-                action_icon = "🚨"
+                st.error(
+                    f"🚨 **Action Required:** {recommendation}"
+                )
 
             elif risk == "MEDIUM":
 
-                action_class = "action-medium"
-                action_icon = "⚠️"
+                st.warning(
+                    f"⚠️ **Action Required:** {recommendation}"
+                )
+
+            elif risk == "LOW":
+
+                st.success(
+                    f"✅ **Action Required:** {recommendation}"
+                )
 
             else:
 
-                action_class = "action-low"
-                action_icon = "✅"
+                st.info(
+                    f"🔍 **Recommendation:** {recommendation}"
+                )
 
 
-            st.markdown(
-                f"""
-                <div class="action-card {action_class}">
-
-                    <strong>
-                        {action_icon} Action Required
-                    </strong>
-
-                    <br>
-
-                    {recommendation}
-
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-
-            st.markdown(
-                "<br>",
-                unsafe_allow_html=True
-            )
+            st.write("")
 
 
             # =================================================
@@ -896,11 +729,9 @@ if analyze_clicked:
             )
 
             st.markdown(
-                """
-                <div class="section-description">
-                    Safety-related signals detected in the report.
-                </div>
-                """,
+                '<div class="section-description">'
+                'Safety-related signals detected in the report.'
+                '</div>',
                 unsafe_allow_html=True,
             )
 
@@ -909,20 +740,19 @@ if analyze_clicked:
 
                 for item in indicators:
 
+                    # Escape basic HTML-sensitive characters
+                    safe_item = (
+                        str(item)
+                        .replace("&", "&amp;")
+                        .replace("<", "&lt;")
+                        .replace(">", "&gt;")
+                    )
+
                     st.markdown(
-                        f"""
-                        <div class="indicator-card">
-
-                            <span class="indicator-icon">
-                                🔍
-                            </span>
-
-                            <span>
-                                {item}
-                            </span>
-
-                        </div>
-                        """,
+                        f'<div class="indicator-card">'
+                        f'<span class="indicator-icon">🔍</span>'
+                        f'<span>{safe_item}</span>'
+                        f'</div>',
                         unsafe_allow_html=True,
                     )
 
@@ -938,16 +768,10 @@ if analyze_clicked:
 # ============================================================
 
 st.markdown(
-    """
-    <div class="footer">
-
-        🛡️ Safety Risk Analyzer
-
-        <br>
-
-        Machine Learning Powered • Proactive Safety Assessment
-
-    </div>
-    """,
+    '<div class="footer">'
+    '🛡️ Safety Risk Analyzer'
+    '<br>'
+    'Machine Learning Powered • Proactive Safety Assessment'
+    '</div>',
     unsafe_allow_html=True,
 )
