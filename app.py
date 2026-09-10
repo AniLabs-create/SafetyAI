@@ -1001,15 +1001,19 @@ if analyze_clicked:
                 try:
 
                     save_analysis(
-                        report,
-                        result
+                        result,
+                        report
                     )
 
                     database_saved = True
 
-                except Exception:
+                except Exception as error:
 
                     database_saved = False
+
+                    st.caption(
+                        f"Database error: {error}"
+                    )
 
 
             # =================================================
